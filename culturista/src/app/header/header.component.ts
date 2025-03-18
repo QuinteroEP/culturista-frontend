@@ -12,8 +12,8 @@ export class HeaderComponent {
 
   constructor(private router: Router) { }
   
-  goToForm() {
-    console.log("goToForm() called");
-    this.router.navigateByUrl('/formulario');
+  showForm() {
+    console.log('showForm');
+    this.router.navigate(['formulario']);
   }
 }

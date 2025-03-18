@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
-  constructor() {
-    console.log("FormularioComponent Loaded!");
-  }
+
 }
