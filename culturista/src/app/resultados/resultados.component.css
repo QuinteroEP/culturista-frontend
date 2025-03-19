@@ -1,0 +1,20 @@
+table{
+    border-style: solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    margin: 20px auto;
+    width: auto;
+}
+
+td{
+    border-style: solid;
+    padding: 10px;
+    text-align: center;
+}
+
+body, html {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}

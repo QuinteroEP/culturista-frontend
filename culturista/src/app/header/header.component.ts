@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -11,9 +10,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
   constructor(private router: Router) { }
-  
-  showForm() {
+
+  goToHome() {
     console.log('showForm');
-    this.router.navigate(['formulario']);
+    this.router.navigate(['']);
   }
 }

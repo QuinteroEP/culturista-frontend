@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { LandingComponent } from './landing/landing.component';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    imports: [LandingComponent, HeaderComponent],
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+  selector: 'app-root',
+  standalone: true, // Mark as standalone
+  imports: [HeaderComponent, RouterModule, FooterComponent], // Import standalone components and RouterModule
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'culturista';

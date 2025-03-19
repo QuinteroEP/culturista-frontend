@@ -1,1 +1,40 @@
-<p>formulario works!</p>
+<form class="form" (ngSubmit)="showResults()" #form="ngForm">
+    <h1>Formulario</h1>
+
+    <label>Destino</label>
+    <input type="text" name="destino" ngModel required/>
+
+    <label>Fecha de Retorno</label>
+    <input type="date" name="retorno" ngModel required/>
+
+    <label>Fecha de Salida</label>
+    <input type="date" name="salida" ngModel required/>
+
+    <label>Cantidad total de Viajeros</label>
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10+</option>
+    </select>
+
+    <label>Presupuesto Total</label>
+    <input type="number" name="destino" ngModel required/>
+
+    <label>Tipo de Actividad</label>
+    <select>
+        <option value="1">Cultural</option>
+        <option value="2">Deportiva</option>
+        <option value="3">Gastronómica</option>
+        <option value="4">Relajante</option>
+        <option value="5">Aventura</option>
+    </select>
+
+    <button type="submit" [disabled]="form.invalid">Ver Recomendaciones</button>
+</form>
