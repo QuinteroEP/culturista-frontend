@@ -1,20 +1,69 @@
-table{
-    border-style: solid;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+/* Estilos generales para la tabla */
+table {
+    border-collapse: collapse; /* Hace que los bordes no se dupliquen */
+    width: 90%;
+    max-width: 800px; /* No demasiado ancha */
     margin: 20px auto;
-    width: auto;
+    background: white;
+    color: black;
+    border: 2px solid black;
 }
 
-td{
-    border-style: solid;
-    padding: 10px;
+/* Encabezado de la tabla */
+thead {
+    background-color: #f0f0f0; /* Gris claro */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 12px;
     text-align: center;
 }
 
+th {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para las imágenes dentro de la tabla */
+td img {
+    width: 100px; /* Tamaño fijo para fotos */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Contenedor de botones para que tengan separación horizontal */
+.button-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilos para los botones */
+.table-btn {
+    white-space: nowrap; /* Evita el salto de línea dentro del botón */
+    background-color: #5cb8f5; /* Azul */
+    color: black; /* Texto negro */
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid black; /* Borde negro */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Evita que sean demasiado grandes */
+}
+
+.table-btn:hover {
+    background-color: #005fa3; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* Ajuste general del body y html */
 body, html {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
