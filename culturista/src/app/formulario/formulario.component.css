@@ -63,6 +63,6 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #00bfff; /* Azul */
+    background-color: #00bfff;
     cursor: not-allowed;
 }
