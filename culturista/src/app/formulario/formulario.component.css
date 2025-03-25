@@ -1,5 +1,5 @@
 .form {
-    background-color: white; /* Fondo blanco */
+    background-color: white;
     color: black;
     padding: 30px;
     border-radius: 10px;
@@ -7,7 +7,7 @@
     margin: 40px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-    border: 2px solid #ccc; /* Borde gris claro */
+    border: 2px solid #ccc;
 }
 
 .form-title {
@@ -63,6 +63,6 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #00bfff;
+    background-color: #949494;
     cursor: not-allowed;
 }

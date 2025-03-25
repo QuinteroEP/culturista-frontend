@@ -1,69 +1,90 @@
-/* Estilos generales para la tabla */
-table {
-    border-collapse: collapse; /* Hace que los bordes no se dupliquen */
-    width: 90%;
-    max-width: 800px; /* No demasiado ancha */
-    margin: 20px auto;
-    background: white;
-    color: black;
-    border: 2px solid black;
-}
-
-/* Encabezado de la tabla */
-thead {
-    background-color: #f0f0f0; /* Gris claro */
-}
-
-th, td {
-    border: 1px solid black;
-    padding: 12px;
-    text-align: center;
-}
-
-th {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Estilos para las imágenes dentro de la tabla */
-td img {
-    width: 100px; /* Tamaño fijo para fotos */
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Contenedor de botones para que tengan separación horizontal */
-.button-container {
+.horizontal-card {
+    display: flex;               /* Imagen a la izquierda, contenido a la derecha */
+    align-items: flex-start;     /* Alinea en la parte superior (puede ser center si prefieres) */
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    /* 
+      No fijes un width aquí; deja que la tarjeta se ajuste
+      a la columna de la grid (min 400px, max 1fr).
+    */
+  }
+  
+  /* Imagen de la tarjeta */
+  .horizontal-card img {
+    width: 180px;         /* Ajusta a tu gusto */
+    height: auto;         /* Mantiene la proporción */
+    border-radius: 8px;
+    object-fit: cover;    /* Recorta la imagen si es muy grande */
+    margin-right: 16px;   /* Espacio entre imagen y contenido */
+  }
+  
+  /* Contenido (título, texto, botones) */
+  .card-content {
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 10px; /* Espacio entre botones */
-}
-
-/* Estilos para los botones */
-.table-btn {
-    white-space: nowrap; /* Evita el salto de línea dentro del botón */
-    background-color: #5cb8f5; /* Azul */
-    color: black; /* Texto negro */
-    padding: 12px 20px;
+    flex-direction: column;
+    flex: 1;              /* Ocupa todo el espacio restante */
+  }
+  
+  /* Título */
+  .card-content h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+  
+  /* Texto */
+  .card-content p {
+    margin: 0 0 16px;
     font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  /* Botones */
+  .button-group {
+    margin-top: auto; /* Empuja los botones hacia abajo si el texto es largo */
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-group button {
+    background-color: #5cb8f5;
+    color: #000;
+    padding: 10px 12px;
+    font-size: 14px;
     font-weight: bold;
-    border: 2px solid black; /* Borde negro */
+    border: 2px solid #000;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: auto; /* Evita que sean demasiado grandes */
-}
-
-.table-btn:hover {
-    background-color: #005fa3; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  .button-group button:hover {
+    background-color: #005fa3;
     transform: scale(1.05);
-}
+  }
 
-/* Ajuste general del body y html */
-body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+  .cards-wrapper {
+    display: grid;
+    /*
+      minmax(650px, 1fr) hace que cada tarjeta tenga
+      un ancho mínimo de 650px antes de "romper" a una sola columna.
+      Ajusta este número a tu preferencia.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    
+    /* Aumenta el espacio entre tarjetas */
+    gap: 50px;
+    
+    /* Ocupa todo el ancho */
+    width: 100%;
+    margin: 0;
+    
+    /* Un poco más de padding alrededor de todas las tarjetas */
+    padding: 30px;
+    
+    box-sizing: border-box;
+  }

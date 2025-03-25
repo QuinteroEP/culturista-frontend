@@ -29,7 +29,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 45px; /* Más espacio entre las opciones */
+    gap: 45px; /* Espacio entre las opciones */
     margin: 0;
     padding: 0;
 }
