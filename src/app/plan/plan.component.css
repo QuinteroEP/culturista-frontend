@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00bfff; /* Azul */
+    color: rgb(0, 0, 0);
+    border: black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}

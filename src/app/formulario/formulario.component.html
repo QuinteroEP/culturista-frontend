@@ -1,0 +1,63 @@
+<form class="form" (ngSubmit)="showResults()" #form="ngForm">
+    <h1 class="form-title">Formulario</h1>
+
+    <label>Destino</label>
+    <input type="text" name="destino" ngModel required />
+
+    <label>Fecha de Retorno</label>
+    <input type="date" name="retorno" ngModel required />
+
+    <label>Fecha de Salida</label>
+    <input type="date" name="salida" ngModel required />
+
+    <label>Cantidad total de Viajeros</label>
+    <select name="viajeros" ngModel required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10+</option>
+    </select>
+
+    <label>Presupuesto Total</label>
+    <input type="number" name="presupuesto" ngModel required />
+
+    <label>Tipo de Actividad</label>
+    <div class="checkbox-container">
+        <input type="checkbox" name="Cultural" id="Cultural" value="Cultural" ngModel />
+        <label for="Cultural">Cultural</label>
+    </div>
+    <div class="checkbox-container">
+        <input type="checkbox" name="Deportiva" id="Deportiva" value="Deportiva" ngModel />
+        <label for="Deportiva">Deportiva</label>
+    </div>
+    <div class="checkbox-container">
+        <input type="checkbox" name="Gastronómica" id="Gastronómica" value="Gastronómica" ngModel />
+        <label for="Gastronómica">Gastronómica</label>
+    </div>
+    <div class="checkbox-container">
+        <input type="checkbox" name="Relajante" id="Relajante" value="Relajante" ngModel />
+        <label for="Relajante">Relajante</label>
+    </div>
+    <div class="checkbox-container">
+        <input type="checkbox" name="Aventura" id="Aventura" value="Aventura" ngModel />
+        <label for="Aventura">Aventura</label>
+    </div>
+
+    <!--
+    <label>Tipo de Actividad</label>
+    <select name="actividad" ngModel required>
+        <option value="1">Cultural</option>
+        <option value="2">Deportiva</option>
+        <option value="3">Gastronómica</option>
+        <option value="4">Relajante</option>
+        <option value="5">Aventura</option>
+    </select>
+-->
+    <button type="submit" [disabled]="form.invalid">Ver Recomendaciones</button>
+</form>
