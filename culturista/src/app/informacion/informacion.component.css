@@ -1,69 +1,133 @@
-/* Estilos generales para la tabla */
-table {
-    border-collapse: collapse; /* Hace que los bordes no se dupliquen */
-    width: 90%;
-    max-width: 800px; /* No demasiado ancha */
-    margin: 20px auto;
+/* Contenedor general */
+.container {
+    width: 100%; /* Usa todo el ancho */
+    max-width: none; /* Sin restricciones */
+    margin: 50px 0; /* Más espacio superior e inferior */
+    padding: 35px 6%; /* Más padding */
     background: white;
-    color: black;
-    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Encabezado de la tabla */
-thead {
-    background-color: #f0f0f0; /* Gris claro */
+/* Encabezado con imagen y texto */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Más espacio entre imagen y texto */
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 12px;
+/* Imagen */
+.place-image {
+    width: 180px; /* Más grande */
+    height: 180px;
+    border-radius: 10px;
+}
+
+/* Texto */
+.text-container {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 38px; /* Más grande */
+    max-width: 90%;
+}
+
+.description {
+    font-size: 20px; /* Más grande */
+    color: #333;
+    margin-top: 12px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Información */
+.info {
+    margin-top: 25px;
+}
+
+.info p {
+    font-size: 20px; /* Más grande */
+    margin: 10px 0;
+}
+
+.info ul {
+    padding-left: 30px;
+}
+
+.info ul li {
+    font-size: 19px; /* Más grande */
+    margin: 7px 0;
+}
+
+/* Botones alineados correctamente */
+.buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espacio entre botones */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Evita que se desborden en móviles */
+}
+
+/* Botones */
+.btn {
+    padding: 14px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 140px; /* Evita que sean demasiado pequeños */
     text-align: center;
 }
 
-th {
-    font-size: 20px;
+/* Estilos específicos */
+.add-btn {
+    background-color: #5cb8f5;
+    color: black;
     font-weight: bold;
 }
 
-/* Estilos para las imágenes dentro de la tabla */
-td img {
-    width: 100px; /* Tamaño fijo para fotos */
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Contenedor de botones para que tengan separación horizontal */
-.button-container {
-    display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 10px; /* Espacio entre botones */
-}
-
-/* Estilos para los botones */
-.table-btn {
-    white-space: nowrap; /* Evita el salto de línea dentro del botón */
-    background-color: #5cb8f5; /* Azul */
-    color: black; /* Texto negro */
-    padding: 12px 20px;
-    font-size: 16px;
+.return-btn {
+    background-color: white;
+    color: black;
     font-weight: bold;
-    border: 2px solid black; /* Borde negro */
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: auto; /* Evita que sean demasiado grandes */
+    border: 2px solid black;
 }
 
-.table-btn:hover {
-    background-color: #005fa3; /* Azul más oscuro al pasar el mouse */
-    transform: scale(1.05);
+.btn:hover {
+    opacity: 0.8;
 }
 
-/* Ajuste general del body y html */
-body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .place-image {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 32px;
+        max-width: 100%;
+    }
+
+    .description {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan todo el ancho en móviles */
+    }
 }

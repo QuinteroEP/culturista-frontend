@@ -1,25 +1,28 @@
+body {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* Degradado sutil */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .travel-planner {
     text-align: center;
-    padding: 40px;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 1000px; /* Un poco más ancho */
-    margin: 40px auto;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .title {
-    font-size: 42px; /* Más grande */
+    font-size: 42px;
     font-weight: bold;
-    margin-bottom: 15px;
     color: #222;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 .subtitle {
-    font-size: 24px; /* Más grande */
-    margin-bottom: 20px;
+    font-size: 22px;
     color: #444;
+    margin-bottom: 25px;
 }
 
 .button-container {
@@ -30,38 +33,40 @@
 
 .register-btn {
     background-color: #00bfff; /* Azul */
-    color: black; /* Texto negro */
-    padding: 16px 28px; /* Botón más grande */
-    border: black;
+    color: black;
+    padding: 16px 30px;
+    border: 2px solid black; /* Borde negro */
     border-radius: 8px;
     cursor: pointer;
-    font-size: 24px; /* Texto más grande */
+    font-size: 24px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: all 0.3s ease-in-out;
 }
 
 .register-btn:hover {
     background-color: #0c8ddd;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .travel-icons {
     display: flex;
-    justify-content: space-evenly; /* Mejor distribución horizontal */
+    justify-content: center;
     align-items: center;
-    gap: 40px;
-    margin-top: 30px;
+    gap: 80px; /* Espacio entre iconos */
+    margin-top: 40px;
 }
 
 .travel-icons img {
-    width: 140px; /* Más grande */
+    width: 160px; /* Íconos más grandes */
     height: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
 }
 
 .slogan {
-    font-size: 28px; /* Más grande */
+    font-size: 28px;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 40px;
     color: #222;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }

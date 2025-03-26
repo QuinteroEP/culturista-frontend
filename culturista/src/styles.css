@@ -3,3 +3,9 @@ header {
     border-style: solid;
     padding-left: 10px;
 }
+
+body {
+    font-family: 'Afacad', sans-serif;
+    margin: 0;
+    padding: 0;
+  }

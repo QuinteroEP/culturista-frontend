@@ -1,34 +1,65 @@
-<h1>Le recomendamos estos guias para: Monserrate</h1>
+<div class="container">
+    <div class="recomendacion-container">
+        <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
+        <h1 class="lugar">Monserrate</h1>
+        <h3 class="subtitulo">Guías recomendados:</h3>
 
-<table>
-    <thead>
-        <tr>
-            <th>Foto</th>
-            <th>Nombre</th>
-            <th>Información de contacto</th>
-            <th></th> <!-- Ahora cubre ambos botones -->
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src="assets/playa.png" alt="Monserrate"></td>
-            <td>Amir</td>
-            <td>{{ email1 }}</td>
-            <td class="button-container">
-                <button class="table-btn">Agendar</button>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="assets/playa.png" alt="Monserrate"></td>
-            <td>Andres</td>
-            <td>{{ email2 }}</td>
-            <td class="button-container">
-                <button class="table-btn">Agendar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <div class="guia-container">
+            <div class="guia-card">
+                <img src="assets/guia.png" alt="Guía 1" class="guia-img">
+                <div class="guia-info">
+                    <p class="estrellas">⭐⭐⭐⭐⭐</p>
+                    <h4 class="nombre">Amir</h4>
+                    <p class="contacto">amirguia&#64;gmail.com</p>
+                    <p class="contacto">+57 3208141470</p>
+                    <button class="btn-agregar">Agregar al plan</button>
+                </div>
+            </div>
 
-<div class="button-container">
-    <button class="register-btn" (click)="goToPlan()">Finalizar</button>
+            <div class="guia-card">
+                <img src="assets/guia.png" alt="Guía 2" class="guia-img">
+                <div class="guia-info">
+                    <p class="estrellas">⭐⭐⭐⭐</p>
+                    <h4 class="nombre">Andrés</h4>
+                    <p class="contacto">andresguia&#64;gmail.com</p>
+                    <p class="contacto">+57 3208141470</p>
+                    <button class="btn-agregar">Agregar al plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recomendacion-container">
+        <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
+        <h1 class="lugar">La Candelaria</h1>
+        <h3 class="subtitulo">Guías recomendados:</h3>
+
+        <div class="guia-container">
+            <div class="guia-card">
+                <img src="assets/guia.png" alt="Guía 3" class="guia-img">
+                <div class="guia-info">
+                    <p class="estrellas">⭐⭐⭐⭐⭐</p>
+                    <h4 class="nombre">Carlos</h4>
+                    <p class="contacto">carlosguia&#64;gmail.com</p>
+                    <p class="contacto">+57 3105678923</p>
+                    <button class="btn-agregar">Agregar al plan</button>
+                </div>
+            </div>
+
+            <div class="guia-card">
+                <img src="assets/guia.png" alt="Guía 4" class="guia-img">
+                <div class="guia-info">
+                    <p class="estrellas">⭐⭐⭐⭐</p>
+                    <h4 class="nombre">María</h4>
+                    <p class="contacto">mariaguia&#64;gmail.com</p>
+                    <p class="contacto">+57 3147891234</p>
+                    <button class="btn-agregar">Agregar al plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="register-btn" (click)="goToPlan()">Finalizar</button>
+    </div>
 </div>
