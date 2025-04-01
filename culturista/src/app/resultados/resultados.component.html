@@ -17,143 +17,27 @@
       </div>
     </div>
   </div>
-
-  <!-- TARJETA 2 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/2">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 3 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/3">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 4 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/4">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 5 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/5">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 6 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/6">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 7 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/7">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 8 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/8">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 9 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/9">Más Información</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TARJETA 10 -->
-  <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
-    <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button routerLink="/detalles/10">Más Información</button>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let destinos of listaDestinos">
+      <td>{{destinos.nombre}}</td>
+      <td>{{destinos.descripcion}}</td>
+      <td>
+        <button (click)="goToInfo()">Más Información</button>
+        <button>Agregar al Itinerario</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 <div class="button-container">
