@@ -15,7 +15,7 @@ export class ResultadosComponent {
 
   constructor(
     private router: Router,
-    private destinoService: destinoService  ) { }
+    private destinoService: destinoService) { }
 
   ngOnInit() {
     this.destinoService.findAll().subscribe(
@@ -29,7 +29,9 @@ export class ResultadosComponent {
     this.router.navigate(['/formulario', 'guias']);
   }
 
-  goToInfo(){
-    this.router.navigate(['/destinos', 'info']);
+  goToInfo(id: number){
+    console.log("ID: " + id)
+
+    this.router.navigate(['/destinos', 'info', id]);
   }
 }

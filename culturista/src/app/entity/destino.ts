@@ -1,5 +1,5 @@
 export interface destino{
-    destId: number;
+    id: number;
     nombre: string;
     descripcion: string;
     imagen: string;

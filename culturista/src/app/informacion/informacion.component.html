@@ -2,17 +2,13 @@
     <div class="header">
         <img src="assets/playa.png" alt="Monserrate" class="place-image">
         <div class="text-container">
-            <h1>Monserrate</h1>
-            <p class="description">
-                Monserrate es un cerro icónico de Bogotá, famoso por su vista panorámica de la ciudad. 
-                Es un destino turístico popular que cuenta con un santuario religioso, restaurantes y 
-                senderos naturales. Se puede subir caminando, en funicular o en teleférico.
-            </p>
+            <h1>{{destinoInfo.nombre}}</h1>
+            <p class="description">Descripción: {{destinoInfo.descripcion}}</p>
         </div>
     </div>
 
     <div class="info">
-        <p><strong>Ubicación:</strong> Bogotá, Colombia</p>
+        <p><strong>Ubicación:</strong> {{destinoInfo.ubicacion}}</p>
         <p><strong>Costo:</strong> La entrada es gratuita, pero el teleférico y funicular tienen tarifas.</p>
         <p><strong>Horarios:</strong> 5:00 AM - 10:00 PM</p>
         <p><strong>Altura:</strong> 3,152 metros sobre el nivel del mar</p>

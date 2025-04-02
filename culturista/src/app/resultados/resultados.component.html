@@ -13,7 +13,7 @@
       </p>
       <div class="button-group">
         <button>Agregar al Itinerario</button>
-        <button class="table-btn" (click)="goToInfo()">Más Información</button>
+        <button class="table-btn">Más Información</button>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
       <td>{{destinos.nombre}}</td>
       <td>{{destinos.descripcion}}</td>
       <td>
-        <button (click)="goToInfo()">Más Información</button>
+        <button (click)="goToInfo(destinos.id)">Más Información</button>
         <button>Agregar al Itinerario</button>
       </td>
     </tr>
