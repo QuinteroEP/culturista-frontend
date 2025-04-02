@@ -6,35 +6,26 @@
 
         <div class="guia-container">
             <div class="guia-card">
-                <img src="assets/guia.png" alt="Guía 1" class="guia-img">
-                <div class="guia-info">
-                    <p class="estrellas">⭐⭐⭐⭐⭐</p>
-                    <h4 class="nombre">Amir</h4>
-                    <p class="contacto">amirguia&#64;gmail.com</p>
-                    <p class="contacto">+57 3208141470</p>
-                    <button class="btn-agregar">Agregar al plan</button>
-                </div>
+                <table>
+                    <tbody>
+                        <tr *ngFor="let guias of listaGuias">
+                            <td>
+                                <img src="assets/guia.png" alt="Guía 1" class="guia-img">
+                            </td>
+                            <td>
+                                <div id="guide_name">{{ guias.nombre }}</div>
+                                <div>{{ guias.correo }}</div>
+                                <div>{{ guias.telefono }}</div>
+                            </td>
+                            <td colspan="2" class="button-cell">
+                                <button class="btn-agregar">Agendar</button>
+                                <button class="btn-agregar">Ver Reseñas</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let guias of listaGuias">
-              <td>{{guias.nombre}}</td>
-              <td>{{guias.correo}}</td>
-              <td>
-                <button>Agendar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
     </div>
 
     <div class="button-container">

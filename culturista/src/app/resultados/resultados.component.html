@@ -5,40 +5,26 @@
 
   <!-- TARJETA 1 -->
   <div class="horizontal-card">
-    <img src="assets/playa.png" alt="Imagen" />
     <div class="card-content">
-      <h2>Title</h2>
-      <p>
-        Body text...
-      </p>
-      <div class="button-group">
-        <button>Agregar al Itinerario</button>
-        <button class="table-btn">Más Información</button>
-      </div>
+      <table>
+        <tbody>
+          <tr *ngFor="let destinos of listaDestinos">
+            <td><img src="assets/playa.png" alt="Imagen" /></td>
+            <td>{{destinos.nombre}}</td>
+            <td>{{destinos.descripcion}}</td>
+            <td>Actividad de tipo {{destinos.tipo}}</td>
+            <td>
+              <div class="button-group">
+                <button>Agregar al Itinerario</button>
+                <button class="table-btn" (click)="goToInfo(destinos.id)">Más Información</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let destinos of listaDestinos">
-      <td>{{destinos.nombre}}</td>
-      <td>{{destinos.descripcion}}</td>
-      <td>
-        <button (click)="goToInfo(destinos.id)">Más Información</button>
-        <button>Agregar al Itinerario</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 
 <div class="button-container">
     <button class="register-btn" (click)="goToGuides()">Siguiente Paso</button>

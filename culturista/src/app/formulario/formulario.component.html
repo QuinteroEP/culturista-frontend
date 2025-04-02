@@ -2,8 +2,16 @@
     <h1 class="form-title">Formulario</h1>
 
     <label>Destino</label>
+    <datalist id="destinos">
+        <option value="Bogotá"></option>
+        <option value="Zipaquirá"></option>
+        <option value="Cartagena"></option>
+        <option value="Amazonia"></option>
+    </datalist>
+    <!--
     <input type="text" name="destino" ngModel required />
-
+-->
+    <input list="destinos">
     <label>Fecha de Retorno</label>
     <input type="date" name="retorno" ngModel required />
 
@@ -49,15 +57,20 @@
         <label for="Aventura">Aventura</label>
     </div>
 
-    <!--
-    <label>Tipo de Actividad</label>
-    <select name="actividad" ngModel required>
-        <option value="1">Cultural</option>
-        <option value="2">Deportiva</option>
-        <option value="3">Gastronómica</option>
-        <option value="4">Relajante</option>
-        <option value="5">Aventura</option>
-    </select>
--->
+    <div class="checkbox-container">
+        <input type="checkbox" name="Turistica" id="Turistica" value="Turistica" ngModel />
+        <label for="Turistica">Turistica</label>
+    </div>
+
+    <div class="checkbox-container">
+        <input type="checkbox" name="Religiosa" id="Religiosa" value="Religiosa" ngModel />
+        <label for="Religiosa">Religiosa</label>
+    </div>
+
+    <div class="checkbox-container">
+        <input type="checkbox" name="Otros" id="Otros" value="Otros" ngModel />
+        <label for="Otros">Otros</label>
+    </div>
+
     <button type="submit" [disabled]="form.invalid">Ver Recomendaciones</button>
 </form>
