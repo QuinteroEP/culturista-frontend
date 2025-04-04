@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -12,8 +13,35 @@ export class FormularioComponent {
 
   constructor(private router: Router) { }
   
-  showResults() {
-    console.log('showResults');
-    this.router.navigate(['formulario/resultados']);
+  showResults(form: NgForm) {
+    console.log('Form Data:', form.value);
+    
+    const destino = form.value.destinos;
+    const retorno = form.value.retorno;
+    const salida = form.value.salida;
+    const viajeros = form.value.viajeros;
+    const presupuesto = form.value.presupuesto;
+    const actividades = Object.keys(form.value).filter(key => form.value[key] === true); // Extract selected checkboxes
+
+    const fecha = form.value.salida;
+
+    console.log('Destino:', destino);
+    console.log('Fecha de Retorno:', retorno);
+    console.log('Fecha de Salida:', salida);
+    console.log('Cantidad de Viajeros:', viajeros);
+    console.log('Presupuesto:', presupuesto);
+    console.log('Actividades:', actividades);
+
+    const queryParams = {
+      actividades: actividades.join(','), // Convert array to string
+      destino: destino,
+      //retorno: retorno,
+      //salida: salida,
+      fecha: fecha,
+      presupuesto: presupuesto,
+      viajeros: viajeros,
+    };
+    
+    this.router.navigate(['formulario/resultados'], { queryParams });
   }  
 }

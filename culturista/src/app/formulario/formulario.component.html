@@ -1,4 +1,4 @@
-<form class="form" (ngSubmit)="showResults()" #form="ngForm">
+<form class="form" (ngSubmit)="showResults(form)" #form="ngForm">
     <h1 class="form-title">Formulario</h1>
 
     <label>Destino</label>
@@ -8,10 +8,8 @@
         <option value="Cartagena"></option>
         <option value="Amazonia"></option>
     </datalist>
-    <!--
-    <input type="text" name="destino" ngModel required />
--->
-    <input list="destinos">
+    
+    <input list="destinos" name="destinos" ngModel required>
     <label>Fecha de Retorno</label>
     <input type="date" name="retorno" ngModel required />
 
@@ -32,17 +30,17 @@
         <option value="10">10+</option>
     </select>
 
-    <label>Presupuesto Total</label>
+    <label>Presupuesto Total Para El Viaje</label>
     <input type="number" name="presupuesto" ngModel required />
 
-    <label>Tipo de Actividad</label>
+    <label>Tipo de Actividad(es)</label>
     <div class="checkbox-container">
         <input type="checkbox" name="Cultural" id="Cultural" value="Cultural" ngModel />
         <label for="Cultural">Cultural</label>
     </div>
     <div class="checkbox-container">
-        <input type="checkbox" name="Deportiva" id="Deportiva" value="Deportiva" ngModel />
-        <label for="Deportiva">Deportiva</label>
+        <input type="checkbox" name="Deportivo" id="Deportivo" value="Deportivo" ngModel />
+        <label for="Deportivo">Deportiva</label>
     </div>
     <div class="checkbox-container">
         <input type="checkbox" name="Gastronómica" id="Gastronómica" value="Gastronómica" ngModel />
@@ -58,8 +56,8 @@
     </div>
 
     <div class="checkbox-container">
-        <input type="checkbox" name="Turistica" id="Turistica" value="Turistica" ngModel />
-        <label for="Turistica">Turistica</label>
+        <input type="checkbox" name="Turismo" id="Turismo" value="Turismo" ngModel />
+        <label for="Turismo">Turistica</label>
     </div>
 
     <div class="checkbox-container">

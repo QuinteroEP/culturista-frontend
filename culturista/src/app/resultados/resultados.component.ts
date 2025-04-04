@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { destino } from '../entity/destino';
 import { destinoService } from 'src/app/service/destinoService';
 import { CommonModule } from '@angular/common';
@@ -15,14 +15,24 @@ export class ResultadosComponent {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private destinoService: destinoService) { }
 
   ngOnInit() {
-    this.destinoService.findAll().subscribe(
-      (destinos) => {
+    this.route.queryParams.subscribe(params => {
+      console.log('Received Params:', params);
+  
+      // Now, you can use the parameters to filter the list
+      this.destinoService.filterList(
+        params['actividades'] ? params['actividades'].split(',') : [], // Convert activities back to array
+        params['destino'],
+        params['fecha'],
+        params['presupuesto'],
+        params['viajeros'],
+      ).subscribe(destinos => {
         this.listaDestinos = destinos;
-      }
-    );
+      });
+    });
   }
 
   goToGuides(){
