@@ -11,8 +11,8 @@ export class LandingComponent {
 
   constructor(private router: Router) { }
   
-  goToForm() {
+  goToLogin() {
     console.log('showForm');
-    this.router.navigate(['formulario']);
+    this.router.navigate(['login']);
   }
 }

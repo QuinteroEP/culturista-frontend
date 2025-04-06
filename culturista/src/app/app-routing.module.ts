@@ -6,6 +6,8 @@ import { ResultadosComponent } from './resultados/resultados.component';
 import { PlanComponent } from './plan/plan.component';
 import { GuiasComponent } from './guias/guias.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -13,7 +15,9 @@ export const routes: Routes = [
   { path: 'formulario/resultados', component: ResultadosComponent },
   { path: 'formulario/guias', component: GuiasComponent },
   { path: 'destinos/info/:id', component: InformacionComponent},
-  { path : 'plan', component: PlanComponent}
+  { path: 'plan', component: PlanComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: RegistroComponent },
 ];
 
 @NgModule({

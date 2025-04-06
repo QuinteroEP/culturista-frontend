@@ -11,8 +11,12 @@
             <li><a href="#">¿Eres Organizador?</a></li>
         </ul>
     </nav>
-    <div class="auth-links">
-        <a href="#">Iniciar Sesión</a>
-        <button class="register-btn">Registrarse</button>
+    
+    <div class="auth-links" *ngIf="logged === false">
+        <button class="register-btn" (click)="goToRegistro()">Registrarse</button>
+    </div>
+
+    <div *ngIf="logged">
+        <p>Hola John Doe</p>
     </div>
 </header>

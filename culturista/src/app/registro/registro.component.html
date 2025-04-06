@@ -1,0 +1,17 @@
+<form (ngSubmit)="goToForm(form)" #form="ngForm">
+    <h1>Registro</h1>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirmarPassword">Confirmar Contraseña:</label>
+    <input type="password" id="confirmarPassword" name="confirmarPassword" required>
+
+    <button type="submit">Crear mi cuenta</button>
+</form>
