@@ -19,20 +19,41 @@ export class ResultadosComponent {
     private destinoService: destinoService) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      console.log('Received Params:', params);
-  
-      // Now, you can use the parameters to filter the list
-      this.destinoService.filterList(
-        params['actividades'] ? params['actividades'].split(',') : [], // Convert activities back to array
-        params['destino'],
-        params['fecha'],
-        params['presupuesto'],
-        params['viajeros'],
-      ).subscribe(destinos => {
-        this.listaDestinos = destinos;
+    const storedDestinos = sessionStorage.getItem('listaDestinos');
+
+    if (storedDestinos != undefined) {
+      try {
+        this.listaDestinos = storedDestinos ? JSON.parse(storedDestinos) : [];
+      } catch (e) {
+        console.error('no JSON in sessionStorage:', e);
+        this.listaDestinos = [];
+      }
+    }
+    else{
+      this.listaDestinos = [];
+
+      this.route.queryParams.subscribe(params => {
+        console.log('Received Params:', params);
+
+        const actividades: string[] = params['actividades']
+        ? Array.isArray(params['actividades'])
+          ? params['actividades']
+          : params['actividades'].split(',')
+          : [];
+
+        this.destinoService.filterList(
+          actividades,
+          params['destino'],
+          params['inicio'],
+          params['fin'],
+          params['presupuesto'],
+          params['viajeros'],
+        ).subscribe(destinos => {
+          this.listaDestinos = destinos;
+          sessionStorage.setItem('listaDestinos', JSON.stringify(this.listaDestinos));
+        });
       });
-    });
+    }
   }
 
   goToGuides(){

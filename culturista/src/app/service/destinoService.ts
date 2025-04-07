@@ -22,13 +22,19 @@ export class destinoService {
     return this.http.get<destino>('http://localhost:8090/destino/informacion/'+id);
   }
 
-  filterList(tipo: string, ubicacion: string, fecha: string, precio: number, capacidad: number): Observable<destino[]> {
-    const params = new HttpParams()
-      .set('tipo', tipo)
-      .set('ubicacion', ubicacion)
-      .set('fecha', fecha)
-      .set('precio', precio.toString())
-      .set('capacidad', capacidad.toString());
+  filterList(tipo: string[], ubicacion: string, inicio: Date, fin: Date, precio: number, viajeros: number): Observable<destino[]> {
+    let params = new HttpParams();
+
+    tipo.forEach((tipo: string) => {
+    params = params.append('tipo', tipo);
+    });
+
+    params = params
+    .set('ubicacion', ubicacion)
+    .set('inicio', inicio.toString().split('T')[0]) // format as yyyy-MM-dd
+    .set('fin', fin.toString().split('T')[0])
+    .set('precio', precio.toString())
+    .set('capacidad', viajeros.toString());
 
     const url = `http://localhost:8090/destino/resultados/?${params.toString()}`;
     console.log(url);

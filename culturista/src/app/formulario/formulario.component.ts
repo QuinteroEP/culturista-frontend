@@ -35,9 +35,8 @@ export class FormularioComponent {
     const queryParams = {
       actividades: actividades.join(','), // Convert array to string
       destino: destino,
-      //retorno: retorno,
-      //salida: salida,
-      fecha: fecha,
+      inicio: salida,
+      fin: retorno,
       presupuesto: presupuesto,
       viajeros: viajeros,
     };
