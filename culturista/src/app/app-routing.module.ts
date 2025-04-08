@@ -8,6 +8,9 @@ import { GuiasComponent } from './guias/guias.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ServiciosComponent } from './info/servicios/servicios.component';
+import { OrganizadoresComponent } from './info/organizadores/organizadores.component';
+import { ContactoComponent } from './info/contacto/contacto.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -18,6 +21,9 @@ export const routes: Routes = [
   { path: 'plan', component: PlanComponent},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegistroComponent },
+  { path : 'info/servicios', component: ServiciosComponent },
+  { path : 'info/organizadores', component: OrganizadoresComponent },
+  { path : 'info/contacto', component: ContactoComponent },
 ];
 
 @NgModule({

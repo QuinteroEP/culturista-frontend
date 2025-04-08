@@ -1,10 +1,13 @@
 <!-- Contenedor general de las tarjetas -->
-<h1>Estos fueron tus Resultados!</h1>
+<h1 *ngIf="listaDestinos.length !== 0">Estos fueron tus Resultados!</h1>
 
 <div class="cards-wrapper">
 
   <!-- TARJETA 1 -->
   <div class="horizontal-card">
+    <div *ngIf="listaDestinos.length === 0" class="error_message">
+      <p>Lo sentimos, no se encontraron resultados para tu búsqueda</p>
+    </div>
     <div class="card-content">
       <table>
         <tbody>

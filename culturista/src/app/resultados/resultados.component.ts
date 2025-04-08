@@ -19,6 +19,7 @@ export class ResultadosComponent {
     private destinoService: destinoService) { }
 
   ngOnInit() {
+    console.log(this.listaDestinos);
     const storedDestinos = sessionStorage.getItem('listaDestinos');
 
     if (storedDestinos != undefined) {
