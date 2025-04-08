@@ -35,6 +35,7 @@
     <input type="number" name="presupuesto" ngModel required />
 
     <label>Tipo de Actividad(es)</label>
+    <div class="checkbox-grid">
     <div class="checkbox-container">
         <input type="checkbox" name="Cultural" id="Cultural" value="Cultural" ngModel />
         <label for="Cultural">Cultural</label>
@@ -55,21 +56,18 @@
         <input type="checkbox" name="Aventura" id="Aventura" value="Aventura" ngModel />
         <label for="Aventura">Aventura</label>
     </div>
-
     <div class="checkbox-container">
         <input type="checkbox" name="Turismo" id="Turismo" value="Turismo" ngModel />
-        <label for="Turismo">Turistica</label>
+        <label for="Turismo">Turística</label>
     </div>
-
     <div class="checkbox-container">
         <input type="checkbox" name="Religioso" id="Religioso" value="Religioso" ngModel />
         <label for="Religioso">Religiosa</label>
     </div>
-
     <div class="checkbox-container">
         <input type="checkbox" name="Otros" id="Otros" value="Otros" ngModel />
         <label for="Otros">Otros</label>
     </div>
-
+</div>
     <button type="submit" [disabled]="form.invalid">Ver Recomendaciones</button>
 </form>

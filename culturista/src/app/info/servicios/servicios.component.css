@@ -1,0 +1,41 @@
+/* Establece un fondo suave y una tipografía legible en todo el documento */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Estilo para los títulos principales */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #222;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo para subtítulos */
+h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Estilo para párrafos */
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Opcional: centrar el contenido en un ancho máximo */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
