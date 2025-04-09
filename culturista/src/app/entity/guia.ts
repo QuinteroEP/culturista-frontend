@@ -1,5 +1,5 @@
 export interface guia{
-    guiaId: number;
+    id: number;
     nombre: string;
     correo: string;
     telefono: number;

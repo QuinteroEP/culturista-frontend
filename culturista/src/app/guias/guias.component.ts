@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { guia } from '../entity/guia';
 import { guiaService } from 'src/app/service/guiaService';
 import { CommonModule } from '@angular/common';
+import { planService } from '../service/planService';
 
 @Component({
   selector: 'app-guias',
@@ -15,7 +16,8 @@ export class GuiasComponent {
 
   constructor(
     private router: Router,
-    private guiaService: guiaService) { }
+    private guiaService: guiaService,
+    private plan: planService) { }
 
   ngOnInit() {
     this.guiaService.findAll().subscribe(
@@ -25,9 +27,14 @@ export class GuiasComponent {
     );
   }
 
-  email1 = 'jitter@kim.com';
-  email2 = 'andres@puj.co';
   goToPlan(){
     this.router.navigate(['plan']);
+  }
+
+  addToPlan(id: number, event:any){
+    console.log("Guia agregado: " + id)
+    this.plan.saveToGuides(id);
+
+    event.target.disabled = true;
   }
 }

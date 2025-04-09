@@ -18,7 +18,7 @@
                                 <div>{{ guias.telefono }}</div>
                             </td>
                             <td colspan="2" class="button-cell">
-                                <button class="btn-agregar">Agendar</button>
+                                <button class="btn-agregar" (click)="addToPlan(guias.id, $event)">Agendar</button>
                                 <button class="btn-agregar">Ver Reseñas</button>
                             </td>
                         </tr>

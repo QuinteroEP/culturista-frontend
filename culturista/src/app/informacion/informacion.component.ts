@@ -33,4 +33,10 @@ export class InformacionComponent {
       }
     );
   }
+
+  addToPlan(id: number){
+    console.log("Evento agregado: " + id)
+
+    this.router.navigate(['/formulario', 'resultados']);
+  }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { destino } from '../entity/destino';
 import { destinoService } from 'src/app/service/destinoService';
 import { CommonModule } from '@angular/common';
+import { planService } from '../service/planService';
 
 @Component({
   selector: 'app-resultados',
@@ -16,7 +17,8 @@ export class ResultadosComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private destinoService: destinoService) { }
+    private destinoService: destinoService,
+    private plan: planService) { }
 
   ngOnInit() {
     console.log(this.listaDestinos);
@@ -65,5 +67,12 @@ export class ResultadosComponent {
     console.log("ID: " + id)
 
     this.router.navigate(['/destinos', 'info', id]);
+  }
+
+  addToPlan(id: number, event:any){
+    console.log("Evento agregado: " + id)
+    this.plan.saveToDestinies(id);
+
+    event.target.disabled = true;
   }
 }
