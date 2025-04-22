@@ -13,6 +13,8 @@ export class destinoService {
 
   ) { }
 
+  sentForm:boolean = false;
+
 
   findAll(): Observable<destino[]>{
     return this.http.get<destino[]>('http://localhost:8090/destino/all');
@@ -39,6 +41,7 @@ export class destinoService {
     const url = `http://localhost:8090/destino/resultados/?${params.toString()}`;
     console.log(url);
 
+    this.sentForm = true;
     return this.http.get<destino[]>('http://localhost:8090/destino/resultados/', { params });
   }
 }

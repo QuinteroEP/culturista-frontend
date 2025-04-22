@@ -4,16 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-organizerSignup',
   imports: [FormsModule],
-  templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  templateUrl: './organizerSignup.component.html',
+  styleUrl: './organizerSignup.component.css'
 })
-export class RegistroComponent {
-
+export class OrganizerSignupComponent {
   constructor(private router: Router) { }
 
-  goToForm(form: NgForm){
-    this.router.navigate(['formulario']);
+  goToDashboard(form: NgForm) {
+    this.router.navigate(['organizer/dashboard']);
   }
 }

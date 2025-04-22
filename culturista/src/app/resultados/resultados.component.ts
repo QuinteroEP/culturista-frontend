@@ -13,6 +13,7 @@ import { planService } from '../service/planService';
 })
 export class ResultadosComponent {
   listaDestinos!: destino[];
+  canContinue: boolean = false;
 
   constructor(
     private router: Router,
@@ -21,11 +22,12 @@ export class ResultadosComponent {
     private plan: planService) { }
 
   ngOnInit() {
-    console.log(this.listaDestinos);
     const storedDestinos = sessionStorage.getItem('listaDestinos');
 
-    if (storedDestinos != undefined) {
+    if (storedDestinos != undefined)
+ {
       try {
+        console.log("Loading data from sessionStorage");
         this.listaDestinos = storedDestinos ? JSON.parse(storedDestinos) : [];
       } catch (e) {
         console.error('no JSON in sessionStorage:', e);
@@ -69,10 +71,10 @@ export class ResultadosComponent {
     this.router.navigate(['/destinos', 'info', id]);
   }
 
-  addToPlan(id: number, event:any){
+  addToPlan(id: number){
+
     console.log("Evento agregado: " + id)
     this.plan.saveToDestinies(id);
-
-    event.target.disabled = true;
+    this.canContinue = true;
   }
 }

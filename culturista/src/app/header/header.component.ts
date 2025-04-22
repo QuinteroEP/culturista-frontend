@@ -22,12 +22,10 @@ export class HeaderComponent {
   }
 
   goToHome() {
-    console.log('showForm');
     this.router.navigate(['']);
   }
 
   goToRegistro() {
-    console.log('showForm');
-    this.router.navigate(['signup']);
+    this.router.navigate(['client/signup']);
   }
 }

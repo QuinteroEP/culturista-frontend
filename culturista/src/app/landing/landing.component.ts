@@ -13,6 +13,6 @@ export class LandingComponent {
   
   goToLogin() {
     console.log('showForm');
-    this.router.navigate(['login']);
+    this.router.navigate(['organizer/login']);
   }
 }

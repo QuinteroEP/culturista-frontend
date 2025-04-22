@@ -18,7 +18,7 @@
             <td>Actividad de tipo {{destinos.tipo}}</td>
             <td>
               <div class="button-group">
-                <button (click)="addToPlan(destinos.id, $event)">Agregar al Itinerario</button>
+                <button (click)="addToPlan(destinos.id)">Agregar al Itinerario</button>
                 <button class="table-btn" (click)="goToInfo(destinos.id)">Más Información</button>
               </div>
             </td>
@@ -29,6 +29,6 @@
   </div>
 </div>
 
-<div class="button-container">
-    <button class="register-btn" (click)="goToGuides()">Siguiente Paso</button>
+<div *ngIf="listaDestinos.length !== 0" class="button-container">
+    <button class="register-btn" (click)="goToGuides()" [disabled]="!canContinue">Siguiente Paso</button>
 </div>

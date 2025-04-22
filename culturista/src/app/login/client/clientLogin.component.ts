@@ -2,20 +2,20 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../service/authService';
+import { AuthService } from '../../service/authService';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-clientLogin',
   imports: [FormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './clientLogin.component.html',
+  styleUrl: './clientLogin.component.css'
 })
-export class LoginComponent {
+export class ClientLoginComponent {
 
   constructor(private router: Router, private auth: AuthService) { }
 
   goToRegistro(){
-    this.router.navigate(['signup']);
+    this.router.navigate(['client/signup']);
   }
 
   goToForm(form: NgForm){

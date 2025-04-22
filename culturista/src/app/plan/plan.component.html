@@ -25,30 +25,33 @@
     </div>
 </div>
 
-<h2>Guias</h2>
-<div class="cards-wrapper">
-  <!-- TARJETA 1 -->
-  <div class="horizontal-card">
-    <div class="card-content">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Nombre</th>
-            <th>Correo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let guias of listaGuias">
-            <td><img src="assets/guia.png" alt="Imagen" /></td>
-            <td>{{guias.nombre}}</td>
-            <td>{{guias.correo}}</td>
-          </tr>
-        </tbody>
-      </table>
+<div *ngIf="listaGuias.length !== 0" class="error_message">
+  <h2>Guias</h2>
+  <div class="cards-wrapper">
+    <!-- TARJETA 1 -->
+    <div class="horizontal-card">
+      <div class="card-content">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nombre</th>
+              <th>Correo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let guias of listaGuias">
+              <td><img src="assets/guia.png" alt="Imagen" /></td>
+              <td>{{guias.nombre}}</td>
+              <td>{{guias.correo}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
 
-
-<button>Descargar Mi Plan</button>
+<div class="center-container">
+  <button class="download-button">Descargar Mi Plan</button>
+</div>

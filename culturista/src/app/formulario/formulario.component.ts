@@ -26,8 +26,8 @@ export class FormularioComponent {
     const fecha = form.value.salida;
 
     console.log('Destino:', destino);
-    console.log('Fecha de Retorno:', retorno);
     console.log('Fecha de Salida:', salida);
+    console.log('Fecha de Retorno:', retorno);
     console.log('Cantidad de Viajeros:', viajeros);
     console.log('Presupuesto:', presupuesto);
     console.log('Actividades:', actividades);
@@ -41,6 +41,7 @@ export class FormularioComponent {
       viajeros: viajeros,
     };
     
+    sessionStorage.clear();
     this.router.navigate(['formulario/resultados'], { queryParams });
   }  
 }

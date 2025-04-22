@@ -13,6 +13,7 @@ import { planService } from '../service/planService';
 })
 export class GuiasComponent {
   listaGuias!: guia[];
+  canContinue: boolean = false;
 
   constructor(
     private router: Router,
@@ -34,6 +35,7 @@ export class GuiasComponent {
   addToPlan(id: number, event:any){
     console.log("Guia agregado: " + id)
     this.plan.saveToGuides(id);
+    this.canContinue = true;
 
     event.target.disabled = true;
   }

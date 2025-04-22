@@ -29,6 +29,6 @@
     </div>
 
     <div class="button-container">
-        <button class="register-btn" (click)="goToPlan()">Finalizar</button>
+        <button class="register-btn" (click)="goToPlan()" [disabled]="!canContinue">Finalizar</button>
     </div>
 </div>
