@@ -1,0 +1,57 @@
+/* Contenedor para la sección de contacto */
+.contact-section {
+    background: #ffffff; /* Fondo blanco limpio */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+/* Título principal de la sección */
+.contact-section h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00bfff; /* línea de acento */
+    padding-bottom: 10px;
+}
+
+/* Subtítulo */
+.contact-section h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la lista de contactos */
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-section ul li {
+    border: 1px solid #d0e9ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.contact-section ul li:hover {
+    background: #e6f7ff;
+}
+
+/* Estilo para los párrafos */
+.contact-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-section ul li p {
+    margin: 0;
+    font-weight: 500;
+    color: #006bb3;
+}

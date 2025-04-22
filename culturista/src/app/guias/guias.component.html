@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="recomendacion-container">
+        <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
+        <h1 class="lugar">Monserrate</h1>
+        <h3 class="subtitulo">Guías recomendados:</h3>
+
+        <div class="guia-container">
+            <div class="guia-card">
+                <table>
+                    <tbody>
+                        <tr *ngFor="let guias of listaGuias">
+                            <td>
+                                <img src="assets/guia.png" alt="Guía 1" class="guia-img">
+                            </td>
+                            <td>
+                                <div id="guide_name">{{ guias.nombre }}</div>
+                                <div>{{ guias.correo }}</div>
+                                <div>{{ guias.telefono }}</div>
+                            </td>
+                            <td colspan="2" class="button-cell">
+                                <button class="btn-agregar" (click)="addToPlan(guias.id, $event)">Agendar</button>
+                                <button class="btn-agregar">Ver Reseñas</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="register-btn" (click)="goToPlan()" [disabled]="!canContinue">Finalizar</button>
+    </div>
+</div>

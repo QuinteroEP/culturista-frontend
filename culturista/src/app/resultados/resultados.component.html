@@ -1,0 +1,34 @@
+<!-- Contenedor general de las tarjetas -->
+<h1 *ngIf="listaDestinos.length !== 0">Estos fueron tus Resultados!</h1>
+
+<div class="cards-wrapper">
+
+  <!-- TARJETA 1 -->
+  <div class="horizontal-card">
+    <div *ngIf="listaDestinos.length === 0" class="error_message">
+      <p>Lo sentimos, no se encontraron resultados para tu búsqueda</p>
+    </div>
+    <div class="card-content">
+      <table>
+        <tbody>
+          <tr *ngFor="let destinos of listaDestinos">
+            <td><img src="assets/playa.png" alt="Imagen" /></td>
+            <td>{{destinos.nombre}}</td>
+            <td>{{destinos.descripcion}}</td>
+            <td>Actividad de tipo {{destinos.tipo}}</td>
+            <td>
+              <div class="button-group">
+                <button (click)="addToPlan(destinos.id)">Agregar al Itinerario</button>
+                <button class="table-btn" (click)="goToInfo(destinos.id)">Más Información</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="listaDestinos.length !== 0" class="button-container">
+    <button class="register-btn" (click)="goToGuides()" [disabled]="!canContinue">Siguiente Paso</button>
+</div>
