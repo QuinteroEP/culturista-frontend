@@ -15,4 +15,8 @@ export class OrganizerSignupComponent {
   goToDashboard(form: NgForm) {
     this.router.navigate(['organizer/dashboard']);
   }
+
+  goToLogin() {
+    this.router.navigate(['organizer/login']);
+  }
 }
