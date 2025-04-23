@@ -55,3 +55,8 @@ form button {
 form button:hover {
     background-color: #0c8ddd;
 }
+
+.error{
+    color: red;
+    font-size: 20px;
+}
