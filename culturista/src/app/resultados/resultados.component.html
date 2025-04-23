@@ -18,7 +18,7 @@
             <td>Actividad de tipo {{destinos.tipo}}</td>
             <td>
               <div class="button-group">
-                <button (click)="addToPlan(destinos.id)">Agregar al Itinerario</button>
+                <button (click)="addToPlan(destinos.id)" [disabled]="agregados.has(destinos.id)">Agregar al Itinerario</button>
                 <button class="table-btn" (click)="goToInfo(destinos.id)">Más Información</button>
               </div>
             </td>

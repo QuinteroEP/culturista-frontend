@@ -18,8 +18,8 @@
                                 <div>{{ guias.telefono }}</div>
                             </td>
                             <td colspan="2" class="button-cell">
-                                <button class="btn-agregar" (click)="addToPlan(guias.id, $event)">Agendar</button>
-                                <button class="btn-agregar">Ver Reseñas</button>
+                                <button class="btn-agregar" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
+                                <button class="btn-agregar" (click)="goToInfo(guias.id)">Ver Información</button>
                             </td>
                         </tr>
                     </tbody>
@@ -29,6 +29,6 @@
     </div>
 
     <div class="button-container">
-        <button class="register-btn" (click)="goToPlan()" [disabled]="!canContinue">Finalizar</button>
+        <button class="register-btn" (click)="goToPlan()">Finalizar</button>
     </div>
 </div>

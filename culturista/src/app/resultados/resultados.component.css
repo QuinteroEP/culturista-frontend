@@ -121,3 +121,16 @@ h1 {
   font-weight: bold;
   font-size: 30px;
 }
+
+button:disabled
+{
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.button-group button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}

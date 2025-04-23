@@ -13,6 +13,7 @@ import { planService } from '../service/planService';
 })
 export class ResultadosComponent {
   listaDestinos!: destino[];
+  agregados: Set<number> = new Set();
   canContinue: boolean = false;
 
   constructor(
@@ -72,9 +73,9 @@ export class ResultadosComponent {
   }
 
   addToPlan(id: number){
-
     console.log("Evento agregado: " + id)
     this.plan.saveToDestinies(id);
+    this.agregados.add(id);
     this.canContinue = true;
   }
 }

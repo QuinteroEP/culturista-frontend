@@ -13,7 +13,7 @@ import { planService } from '../service/planService';
 })
 export class GuiasComponent {
   listaGuias!: guia[];
-  canContinue: boolean = false;
+  agregados: Set<number> = new Set();
 
   constructor(
     private router: Router,
@@ -32,11 +32,13 @@ export class GuiasComponent {
     this.router.navigate(['plan']);
   }
 
-  addToPlan(id: number, event:any){
+  goToInfo(id: number){
+    this.router.navigate(['/guias', 'informacion', id]);
+  }
+
+  addToPlan(id: number){
     console.log("Guia agregado: " + id)
     this.plan.saveToGuides(id);
-    this.canContinue = true;
-
-    event.target.disabled = true;
+    this.agregados.add(id);
   }
 }

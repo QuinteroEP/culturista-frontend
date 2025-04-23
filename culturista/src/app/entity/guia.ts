@@ -3,4 +3,6 @@ export interface guia{
     nombre: string;
     correo: string;
     telefono: number;
+    puntaje: number;
+    comentarios: string[];
 }

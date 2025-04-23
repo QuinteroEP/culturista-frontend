@@ -7,6 +7,9 @@ import { planService } from '../service/planService';
 import { guia } from '../entity/guia';
 import { guiaService } from 'src/app/service/guiaService';
 import { forkJoin } from 'rxjs';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
+
 
 @Component({
   selector: 'app-plan',
@@ -63,5 +66,14 @@ export class PlanComponent {
           console.error('Error fetching details for IDs:', error);
         }
       );
+    }
+
+    generatePDF(){
+      const doc = new jsPDF();
+
+      doc.setFontSize(16);
+		  doc.text('Mi plan de viaje', 10, 10);
+
+      doc.save('Mi Plan.pdf');
     }
 }
