@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../service/authService';
 
 @Component({
   selector: 'app-clientSignup',
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientComponentSignup {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private auth: AuthService) { }
 
     registerUser(form: NgForm){
       if(form.value.password !== form.value.confirmarPassword || form.invalid){
@@ -33,7 +34,9 @@ export class ClientComponentSignup {
         this.http.post('http://localhost:8090/usuario/viajero/signup/add', traveler)
         .subscribe({
           next: (response) => {
-            console.log("Usuario registrado exitosamente", response);
+            this.auth.loggedIn.next(true);
+            this.auth.email = form.value.email;
+            console.log("Usuario registrado exitosamente", response);      
             this.router.navigate(['formulario']);
           },
           error: (err) => {

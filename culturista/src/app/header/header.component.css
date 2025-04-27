@@ -73,3 +73,8 @@ nav ul li a {
 .register-btn:hover {
     background-color: #009acd;
 }
+
+p{
+    font-size: 30px;
+    margin-right: 12px;
+}

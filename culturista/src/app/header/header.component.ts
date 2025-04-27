@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../service/authService';
+import { accountService } from 'src/app/service/accountService';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,21 @@ import { AuthService } from '../service/authService';
 })
 
 export class HeaderComponent {
-  constructor(private router: Router, private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService, private accountService: accountService) { }
 
+  greeting: String  = '';
   logged: boolean = false;
 
   ngOnInit() {
     this.auth.logged$.subscribe(value => {
       this.logged = value;
+      if (this.auth.email !== '') {
+        this.accountService.findClientByEmail(this.auth.email).subscribe(
+          (usuario) => {
+            this.greeting = 'Hola ' + usuario.nombre;
+          }
+        );
+      }
     });
   }
 

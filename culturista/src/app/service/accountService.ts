@@ -11,7 +11,11 @@ export class accountService {
   constructor(
     private http: HttpClient) { }
 
-  findById(id: number): Observable<viajero> {
+  findClientById(id: number): Observable<viajero> {
     return this.http.get<viajero>(`http://localhost:8090/usuario/viajero/informacion/${id}`);
+  }
+
+  findClientByEmail(correo: string): Observable<viajero> {
+    return this.http.get<viajero>(`http://localhost:8090/usuario/viajero/informacion/correo/${correo}`);
   }
 }
