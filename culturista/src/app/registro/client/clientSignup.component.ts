@@ -34,10 +34,8 @@ export class ClientComponentSignup {
         this.http.post('http://localhost:8090/usuario/viajero/signup/add', traveler)
         .subscribe({
           next: (response) => {
-            this.auth.loggedIn.next(true);
-            this.auth.email = form.value.email;
             console.log("Usuario registrado exitosamente", response);      
-            this.router.navigate(['formulario']);
+            this.router.navigate(['client/login']);
           },
           error: (err) => {
             console.error("Error al registrar el usuario(viajero)", err.error);

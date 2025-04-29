@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../service/authService';
 import { accountService } from 'src/app/service/accountService';
+import { planService } from '../service/planService';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { accountService } from 'src/app/service/accountService';
 })
 
 export class HeaderComponent {
-  constructor(private router: Router, private auth: AuthService, private accountService: accountService) { }
+  constructor(private router: Router, private auth: AuthService, private accountService: accountService, private plan: planService) { }
 
   greeting: String  = '';
   logged: boolean = false;
@@ -24,8 +25,12 @@ export class HeaderComponent {
         this.accountService.findClientByEmail(this.auth.email).subscribe(
           (usuario) => {
             this.greeting = 'Hola ' + usuario.nombre;
+            this.plan.name = usuario.nombre;
           }
         );
+      }
+      else{
+        this.greeting = 'Hola John Doe';
       }
     });
   }

@@ -33,7 +33,7 @@ h1 {
     max-width: 90%;
 }
 
-.description {
+.description, .precio {
     font-size: 20px; /* Más grande */
     color: #333;
     margin-top: 12px;
