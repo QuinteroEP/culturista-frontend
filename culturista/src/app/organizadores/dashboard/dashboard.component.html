@@ -1,6 +1,12 @@
 <h1>Hola Doe</h1>
 
 <h2>Mis eventos</h2>
+<div class="button-container-alt">
+    <div class="button-group">
+        <button>Agregar</button>
+    </div>
+</div>
+
 <div class="cards-wrapper">
     <div class="horizontal-card">
         <div class="card-content">
@@ -8,21 +14,21 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Fecha</th>
                         <th>Ubicación</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="button-group">
-                        <button>Ver Informacion</button>
-                        <button>Eliminar</button>
-                        </div>
-                    </td>
+                    <tr *ngFor="let destino of listaDestinos" >
+                        <td> {{destino.nombre}} </td>
+                        <td> {{destino.ubicacion}} </td>
+                        <td>
+                            <div class="button-group">
+                            <button>Ver Informacion</button>
+                            <button class="Delete">Eliminar</button>
+                            </div>
+                        </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -30,6 +36,12 @@
 </div>
 
 <h2>Mis Guias</h2>
+<div class="button-container-alt">
+    <div class="button-group">
+        <button>Agregar</button>
+    </div>
+</div>
+
 <div class="cards-wrapper">
     <div class="horizontal-card">
         <div class="card-content">
@@ -43,15 +55,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
+                    <tr *ngFor="let guias of listaGuias" >
+                      <td> {{guias.nombre}} </td>
+                      <td></td>
+                      <td></td>  
+                      <td>    
                         <div class="button-group">
                             <button>Ver Informacion</button>
-                            <button>Eliminar</button>
-                            </div>
-                    </td>
+                            <button class="Delete">Eliminar</button>  
+                        </div>    
+                    </td>  
+                    </tr>
                 </tbody>
             </table>
         </div>

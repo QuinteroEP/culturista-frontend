@@ -1,0 +1,76 @@
+/* Contenedor general del formulario */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #000000;
+}
+
+/* Título */
+form h1,
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Agrupación de campos */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* Etiquetas */
+form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Campos de texto */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocar los campos */
+form input:focus,
+form select:focus {
+    border-color: #00bfff;
+    outline: none;
+}
+
+/* Botones */
+form button[type="submit"],
+form button[type="button"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #00bfff;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+/* Hover para los botones */
+form button[type="submit"]:hover,
+form button[type="button"]:hover {
+    background-color: #0c8ddd;
+}

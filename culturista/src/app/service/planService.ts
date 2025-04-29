@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
-import { guia } from '../entity/guia';
+import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +11,11 @@ export class planService {
 
     listIds: Array<number> = [];
     listGuides: Array<number> = [];
+
+    public name!: string;
+    public dateS!: string;
+    public dateE!: string;
+    public destiny!: string;
 
     saveToDestinies(id: number) {
         this.listIds.push(id);

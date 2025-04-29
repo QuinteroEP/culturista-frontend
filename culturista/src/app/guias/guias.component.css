@@ -134,3 +134,16 @@ tr{
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+button:disabled
+{
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.button-group button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}

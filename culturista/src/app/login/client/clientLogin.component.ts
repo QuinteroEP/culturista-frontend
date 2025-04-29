@@ -18,8 +18,31 @@ export class ClientLoginComponent {
     this.router.navigate(['client/signup']);
   }
 
-  goToForm(form: NgForm){
-    this.auth.login();
-    this.router.navigate(['formulario']);
+  logInClient(form: NgForm) {
+    if (form.invalid) {
+      console.error("Formulario inválido");
+      return;
+    }
+
+    const loginData = {
+      correo: form.value.email,
+      password: form.value.password
+    };
+
+    this.auth.loginClient(loginData).subscribe({
+      next: (token) => {
+        console.log("Token recibido:", token);
+        if (token) {
+          this.auth.saveToken(token);
+          this.auth.loggedIn.next(true);
+          this.router.navigate(['formulario']);
+        } else {
+          console.error("No se recibió token");
+        }
+      },
+      error: (err) => {
+        console.error("Error al iniciar sesión:", err.error || err.message);
+      }
+    });
   }
 }

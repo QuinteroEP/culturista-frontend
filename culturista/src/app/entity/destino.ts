@@ -5,6 +5,6 @@ export interface destino{
     imagen: string;
     tipo: string;
     ubicacion: string;
-    fecha_inicio: string;
-    fecha_fin: string;
+    fecha: string;
+    precio: number;
 }

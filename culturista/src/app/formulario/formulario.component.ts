@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { planService } from '../service/planService';
 
 @Component({
   selector: 'app-formulario',
@@ -11,7 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormularioComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private plan: planService) { }
   
   showResults(form: NgForm) {
     console.log('Form Data:', form.value);
@@ -31,6 +32,10 @@ export class FormularioComponent {
     console.log('Cantidad de Viajeros:', viajeros);
     console.log('Presupuesto:', presupuesto);
     console.log('Actividades:', actividades);
+
+    this.plan.destiny = destino;
+    this.plan.dateS = salida;
+    this.plan.dateE = retorno;
 
     const queryParams = {
       actividades: actividades.join(','), // Convert array to string

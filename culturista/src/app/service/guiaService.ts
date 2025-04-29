@@ -21,4 +21,12 @@ export class guiaService {
   findById(id:number):Observable<guia>{
     return this.http.get<guia>('http://localhost:8090/guias/informacion/'+id);
   }
+
+  getScore(id:number):Observable<number>{
+    return this.http.get<number>('http://localhost:8090/guias/informacion/puntaje/'+id);
+  }
+
+  getReviews(id:number):Observable<String[]>{
+    return this.http.get<String[]>('http://localhost:8090/guias/informacion/reseñas/'+id);
+  }
 }

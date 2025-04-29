@@ -14,6 +14,8 @@ import { ContactoComponent } from './info/contacto/contacto.component';
 import { OrganizerLoginComponent } from './login/organizer/organizerLogin.component';
 import { OrganizerSignupComponent } from './registro/organizer/organizerSignup.component';
 import { DashboardComponent } from './organizadores/dashboard/dashboard.component';
+import { InformacionGuiasComponent } from './guias/informacion/informacion.component';
+
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -26,9 +28,9 @@ export const routes: Routes = [
 
   { path: 'plan', component: PlanComponent},
 
-  { path : 'info/servicios', component: ServiciosComponent },
-  { path : 'info/organizadores', component: OrganizadoresComponent },
-  { path : 'info/contacto', component: ContactoComponent },
+  { path: 'info/servicios', component: ServiciosComponent },
+  { path: 'info/organizadores', component: OrganizadoresComponent },
+  { path: 'info/contacto', component: ContactoComponent },
 
   { path: 'client/login', component: ClientLoginComponent },
   { path: 'client/signup', component: ClientComponentSignup },
@@ -36,6 +38,8 @@ export const routes: Routes = [
   { path: 'organizer/login', component: OrganizerLoginComponent },
   { path: 'organizer/signup', component: OrganizerSignupComponent },
   { path: 'organizer/dashboard', component: DashboardComponent },
+
+  { path: 'guias/informacion/:id', component: InformacionGuiasComponent },
 ];
 
 @NgModule({

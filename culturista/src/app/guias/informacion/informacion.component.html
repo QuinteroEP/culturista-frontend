@@ -1,0 +1,12 @@
+<h1> {{guiaInfo.nombre}} </h1>
+
+<h2> {{guiaInfo.puntaje}} ⭐️ </h2>
+
+<h3>Reseñas</h3>
+<table>
+    <thead></thead>
+    <tbody>
+        <tr *ngFor="let review of guiaInfo.comentarios">
+            <td>{{review}}</td>
+        </tr>
+</table>

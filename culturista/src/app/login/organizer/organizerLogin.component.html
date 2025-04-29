@@ -1,1 +1,17 @@
-<p>organizer works!</p>
+<h1>
+    Inicie sesion para poder continuar
+</h1>
+
+<form (ngSubmit)="logInOrganizer(form)" #form="ngForm">
+    <div class="form-group">
+        <label for="cedula">Cedula:</label>
+        <input type="cedula" id="cedula" name="cedula" ngModel required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" ngModel required>
+    </div>
+
+    <button type="submit">Iniciar Sesion</button>
+</form>

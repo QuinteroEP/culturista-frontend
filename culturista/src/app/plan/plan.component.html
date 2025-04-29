@@ -17,7 +17,7 @@
             <tr *ngFor="let destinos of listaDestinos">
               <td><img src="assets/playa.png" alt="Imagen" /></td>
               <td>{{destinos.nombre}}</td>
-              <td>25-1-1</td>
+              <td>{{destinos.fecha}}</td>
             </tr>
           </tbody>
         </table>
@@ -53,5 +53,5 @@
 </div>
 
 <div class="center-container">
-  <button class="download-button">Descargar Mi Plan</button>
+  <button class="download-button" (click)="generatePDF()">Descargar Mi Plan</button>
 </div>
