@@ -1,4 +1,4 @@
-<h1>Hola Doe</h1>
+<h1>Buenos Dias Doe</h1>
 
 <h2>Mis eventos</h2>
 <div class="button-container-alt">
@@ -19,6 +19,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div *ngIf="listaDestinos.length === undefined || listaDestinos.length === 0" class="error_message">
+                        <p>No ha registrado ningun destino.</p>
+                      </div>
                     <tr *ngFor="let destino of listaDestinos" >
                         <td> {{destino.nombre}} </td>
                         <td> {{destino.ubicacion}} </td>
@@ -55,6 +58,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div *ngIf="listaGuias.length === undefined || listaGuias.length === 0" class="error_message">
+                        <p>No ha registrado ningun guia.</p>
+                      </div>
                     <tr *ngFor="let guias of listaGuias" >
                       <td> {{guias.nombre}} </td>
                       <td></td>

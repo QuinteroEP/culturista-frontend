@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { viajero } from '../entity/viajero';
+import { organizador } from '../entity/organizador';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -17,5 +18,9 @@ export class accountService {
 
   findClientByEmail(correo: string): Observable<viajero> {
     return this.http.get<viajero>(`http://localhost:8090/usuario/viajero/informacion/correo/${correo}`);
+  }
+
+  findOrgByEmail(correo: string): Observable<organizador> {
+    return this.http.get<organizador>(`http://localhost:8090/usuario/viajero/informacion/correo/${correo}`);
   }
 }

@@ -31,7 +31,7 @@ export class ClientLoginComponent {
 
     this.auth.loginClient(loginData).subscribe({
       next: (token) => {
-        console.log("Token recibido:", token);
+        console.log("Token de cliente recibido:", token);
         if (token) {
           this.auth.saveToken(token);
           this.auth.loggedIn.next(true);
