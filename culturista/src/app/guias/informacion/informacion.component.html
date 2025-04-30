@@ -1,12 +1,20 @@
-<h1> {{guiaInfo.nombre}} </h1>
+<div class="guia-container">
+    <div class="guia-header">
+        <img src="assets/guia.png" alt="Guía" class="guia-img" />
+        <div class="guia-info">
+            <h1 class="guia-nombre">{{guiaInfo.nombre}}</h1>
+            <h2 class="guia-puntaje">
+                {{guiaInfo.puntaje}} <span class="estrella">⭐</span>
+            </h2>
+        </div>
+    </div>
 
-<h2> {{guiaInfo.puntaje}} ⭐️ </h2>
-
-<h3>Reseñas</h3>
-<table>
-    <thead></thead>
-    <tbody>
-        <tr *ngFor="let review of guiaInfo.comentarios">
-            <td>{{review}}</td>
-        </tr>
-</table>
+    <h3 class="guia-reseñas-titulo">Reseñas</h3>
+    <table class="guia-reseñas-tabla">
+        <tbody>
+            <tr *ngFor="let review of guiaInfo.comentarios">
+                <td class="guia-reseña">{{review}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

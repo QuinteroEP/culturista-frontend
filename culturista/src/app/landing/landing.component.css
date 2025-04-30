@@ -1,72 +1,137 @@
 body {
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* Degradado sutil */
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
     margin: 0;
     padding: 0;
-}
-
-.travel-planner {
+  }
+  
+  .travel-planner {
     text-align: center;
-    padding: 50px 20px;
-    max-width: 1000px;
+    padding: 40px 20px;
+    max-width: 960px;
     margin: auto;
-}
-
-.title {
-    font-size: 42px;
-    font-weight: bold;
+  }
+  
+  .title {
+    font-size: 40px;
+    font-weight: 700;
     color: #222;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
+    margin-bottom: 8px;
+  }
 
-.subtitle {
+  .subtitle {
     font-size: 22px;
-    color: #444;
-    margin-bottom: 25px;
-}
+    color: #555;
+    margin-bottom: 24px;
+  }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.register-btn {
-    background-color: #00bfff; /* Azul */
-    color: black;
-    padding: 16px 30px;
-    border: 2px solid black; /* Borde negro */
-    border-radius: 8px;
-    cursor: pointer;
+  .slogan {
     font-size: 24px;
-    font-weight: bold;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: all 0.3s ease-in-out;
-}
-
-.register-btn:hover {
-    background-color: #0c8ddd;
-    transform: scale(1.08);
-}
-
-.travel-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px; /* Espacio entre iconos */
-    margin-top: 40px;
-}
-
-.travel-icons img {
-    width: 160px; /* Íconos más grandes */
-    height: auto;
-    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
-}
-
-.slogan {
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 40px;
+    font-weight: 500;
     color: #222;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-}
+    margin-bottom: 32px;
+  }
+  
+  .button-container {
+    margin-bottom: 32px;
+  }
+
+  .register-btn {
+    background-color: #00bfff;
+    color: #000;
+    padding: 14px 32px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .register-btn:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  }
+  
+  /* Separador */
+  .divider {
+    width: 50%;
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 32px auto;
+  }
+  
+  .benefits {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: left;
+  }
+
+  .benefits h3 {
+    font-size: 24px;
+    color: #0077b6;
+    margin-bottom: 16px;
+  }
+
+  .benefits ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .benefits li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .benefits .icon {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+
+  .sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .section-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .section-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .section-item .content {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .section-item h3 {
+    font-size: 20px;
+    color: #00bfff;
+    margin: 0 0 8px;
+  }
+
+  .section-item p {
+    font-size: 15px;
+    color: #555;
+    margin: 0;
+  }
+
+  .section-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
