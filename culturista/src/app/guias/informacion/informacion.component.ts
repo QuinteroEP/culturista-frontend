@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { guia } from '../../entity/guia';
 import { guiaService } from 'src/app/service/guiaService';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-informacion',
@@ -17,7 +18,8 @@ export class InformacionGuiasComponent {
     constructor(
       private route: ActivatedRoute, 
       private router: Router,
-      private guiaService: guiaService) { }
+      private guiaService: guiaService,
+      private location: Location) { }
 
     ngOnInit() {
       this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -29,5 +31,9 @@ export class InformacionGuiasComponent {
           console.log("guiaInfo:" + this.guiaInfo);
         }
       );
+  }
+
+  return(){
+    this.location.back();
   }
 }

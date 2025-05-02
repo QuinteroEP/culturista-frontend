@@ -1,0 +1,51 @@
+<form class="form" (ngSubmit)="createDestiny(form)" #form="ngForm">
+    <label>Nombre de la actividad</label>
+    <input type="text" name="nombre" [(ngModel)]="destino.nombre" required />
+
+    <label>Ubicación</label>
+    <datalist id="ubicacion">
+        <option value="Bogotá"></option>
+        <option value="Zipaquirá"></option>
+        <option value="Cartagena"></option>
+        <option value="Amazonia"></option>
+    </datalist>
+    
+    <input list="ubicacion" name="ubicacion" [(ngModel)]="destino.ubicacion" required>
+
+    <label>Fecha del evento</label>
+    <input type="date" name="fecha" [(ngModel)]="destino.fecha" required />
+
+    <label>Capacidad</label>
+    <select name="capacidad" [(ngModel)]="destino.capacidad" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10+</option>
+    </select>
+
+    <label>Costo por Persona</label>
+    <input type="number" name="costo" [(ngModel)]="destino.precio" required />
+
+    <label>Tipo de Actividad</label>
+    <select name="tipo" [(ngModel)]="destino.tipo" required>
+        <option value="Cultural">Cultural</option>
+        <option value="Deportivo">Deportivo</option>
+        <option value="Gastronómica">Gastronómica</option>
+        <option value="Relajante">Relajante</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Turismo">Turismo</option>
+        <option value="Religioso">Religioso</option>
+        <option value="Otros">Otros</option>
+    </select>
+
+    <label>Descripción</label>
+    <textarea name="descripcion" [(ngModel)]="destino.descripcion" required></textarea>
+
+    <button type="submit" [disabled]="form.invalid">Confirmar</button>
+</form>

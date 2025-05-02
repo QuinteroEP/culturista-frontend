@@ -1,34 +1,27 @@
 <div class="container">
     <div class="recomendacion-container">
-        <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
-        <h1 class="lugar">Monserrate</h1>
-        <h3 class="subtitulo">Guías recomendados:</h3>
-
-        <div class="guia-container">
-            <div class="guia-card">
-                <table>
-                    <tbody>
-                        <tr *ngFor="let guias of listaGuias">
-                            <td>
-                                <img src="assets/guia.png" alt="Guía 1" class="guia-img">
-                            </td>
-                            <td>
-                                <div id="guide_name">{{ guias.nombre }}</div>
-                                <div>{{ guias.correo }}</div>
-                                <div>{{ guias.telefono }}</div>
-                            </td>
-                            <td colspan="2" class="button-cell">
-                                <button class="btn-agregar" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
-                                <button class="btn-agregar" (click)="goToInfo(guias.id)">Ver Información</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+      <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
+      <h1 class="lugar">Monserrate</h1>
+      <h3 class="subtitulo">Guías recomendados:</h3>
+  
+      <div class="guia-container">
+        <div class="guia-card" *ngFor="let guias of listaGuias">
+          <img src="assets/guia.png" alt="Guía" class="guia-img" />
+          <div class="guia-info">
+            <div id="guide_name">{{ guias.nombre }}</div>
+            <div class="contacto">{{ guias.correo }}</div>
+            <div class="contacto">{{ guias.telefono }}</div>
+            <div class="button-group">
+              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
+              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="goToInfo(guias.id)">Ver Información</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
+  
     <div class="button-container">
-        <button class="register-btn" (click)="goToPlan()">Finalizar</button>
+      <button class="register-btn" (click)="goToPlan()">Finalizar</button>
     </div>
-</div>
+  </div>
+  

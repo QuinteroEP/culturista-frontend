@@ -24,6 +24,18 @@ export class destinoService {
     return this.http.get<destino>('http://localhost:8090/destino/informacion/'+id);
   }
 
+  deleteDestino(id:number):Observable<destino>{
+    return this.http.delete<destino>('http://localhost:8090/destino/delete/' + id, { responseType: 'text' as 'json' });
+  }
+
+  addDestino(destino: destino, id:number): Observable<any> {
+    return this.http.post('http://localhost:8090/destino/add/'+id, destino);
+  }
+
+  updateDestino(destino: destino, id:number): Observable<any> {
+    return this.http.post('http://localhost:8090/destino/update/'+id, destino);
+  }
+
   filterList(tipo: string[], ubicacion: string, inicio: Date, fin: Date, precio: number, viajeros: number): Observable<destino[]> {
     let params = new HttpParams();
 

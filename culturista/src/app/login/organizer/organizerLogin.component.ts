@@ -20,20 +20,23 @@ export class OrganizerLoginComponent {
     }
 
     const loginData = {
-      cedula: form.value.cedula,
+      correo: form.value.correo,
       password: form.value.password
     };
 
     console.log("Datos de inicio de sesión:", loginData);
 
     this.auth.loginOrg(loginData).subscribe({
-      next: (response) => {
-        console.log("Respuesta del servidor:", response);
-        if (response === "Ingreso exitoso") {
-          this.auth.loggedIn.next(true); // Update the loggedIn status
-          this.router.navigate(['organizer/dashboard']); // Navigate to the desired page after login
+      next: (token) => {
+        console.log("Token de organizador recibido:", token);
+        if (token) {
+          this.auth.saveToken(token);
+          this.auth.loggedIn.next(true);
+          this.auth.organizer = true;
+          console.log("Organizador: " + this.auth.organizer);
+          this.router.navigate(['organizer/dashboard']);
         } else {
-          console.error("Error inesperado:", response);
+          console.error("No se recibió token");
         }
       },
       error: (err) => {

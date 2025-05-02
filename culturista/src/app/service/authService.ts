@@ -12,6 +12,8 @@ export class AuthService {
 
   public email: string = '';
 
+  public organizer = false;
+
   logged$ = this.loggedIn.asObservable();
 
   loginClient(credentials: { correo: string; password: string }): Observable<string> {
@@ -19,7 +21,7 @@ export class AuthService {
     return this.http.post('http://localhost:8090/usuario/viajero/login', credentials, { responseType: 'text' });
   }
 
-  loginOrg(credentials: { cedula: number; password: string }): Observable<string> {
+  loginOrg(credentials: { correo: string; password: string }): Observable<string> {
     return this.http.post('http://localhost:8090/usuario/organizador/login', credentials, { responseType: 'text' });
   }
 
