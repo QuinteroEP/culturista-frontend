@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { destino } from '../entity/destino';
 import { destinoService } from 'src/app/service/destinoService';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-informacion',
@@ -17,10 +19,11 @@ export class InformacionComponent {
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private destinoService: destinoService) { }
+    private destinoService: destinoService,
+    private location: Location) { }
 
   returnToForm(){
-    this.router.navigate(['/formulario', 'resultados']);
+    this.location.back();
   }
 
   ngOnInit() {
@@ -32,11 +35,5 @@ export class InformacionComponent {
         this.destinoInfo = destino;
       }
     );
-  }
-
-  addToPlan(id: number){
-    console.log("Evento agregado: " + id)
-
-    this.router.navigate(['/formulario', 'resultados']);
   }
 }

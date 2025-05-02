@@ -2,7 +2,9 @@
     <div class="guia-header">
         <img src="assets/guia.png" alt="Guía" class="guia-img" />
         <div class="guia-info">
-            <h1 class="guia-nombre">{{guiaInfo.nombre}}</h1>
+            <h1 class="guia-nombre">{{guiaInfo.nombre}} ({{guiaInfo.correo}})</h1>
+            <p class="phone">Telefono: {{guiaInfo.telefono}}</p>
+
             <h2 class="guia-puntaje">
                 {{guiaInfo.puntaje}} <span class="estrella">⭐</span>
             </h2>
@@ -17,4 +19,8 @@
             </tr>
         </tbody>
     </table>
+
+    <div class="buttons">
+        <button class="btn return-btn" (click)="return()">Volver</button>
+    </div>
 </div>

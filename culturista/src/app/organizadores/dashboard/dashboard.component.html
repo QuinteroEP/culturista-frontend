@@ -3,7 +3,7 @@
 <h2>Mis eventos</h2>
 <div class="button-container-alt">
     <div class="button-group">
-        <button>Agregar</button>
+        <button (click)="agregarDestino()">Agregar</button>
     </div>
 </div>
 
@@ -21,14 +21,16 @@
                 <tbody>
                     <div *ngIf="listaDestinos.length === undefined || listaDestinos.length === 0" class="error_message">
                         <p>No ha registrado ningun destino.</p>
-                      </div>
+                    </div>
+
                     <tr *ngFor="let destino of listaDestinos" >
                         <td> {{destino.nombre}} </td>
                         <td> {{destino.ubicacion}} </td>
                         <td>
                             <div class="button-group">
-                            <button>Ver Informacion</button>
-                            <button class="Delete">Eliminar</button>
+                            <button *ngIf="destino.id !== undefined" (click)="informacionDestino(destino.id)">Ver Informacion</button>
+                            <button *ngIf="destino.id !== undefined" (click)="actualizarDestino(destino.id)">Modificar</button>
+                            <button class="Delete" *ngIf="destino.id !== undefined" (click)="eliminarDestino(destino.id)">Eliminar</button>
                             </div>
                         </td>
                 </tr>
@@ -68,7 +70,8 @@
                       <td>    
                         <div class="button-group">
                             <button>Ver Informacion</button>
-                            <button class="Delete">Eliminar</button>  
+                            <button (click)="actualizarDestino(guias.id)">Modificar</button>
+                            <button class="Delete" (click)="eliminarGuia(guias.id)">Eliminar</button>  
                         </div>    
                     </td>  
                     </tr>

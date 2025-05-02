@@ -45,3 +45,40 @@
     font-size: 16px;
     line-height: 1.5;
 }
+
+.phone{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espacio entre botones */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Evita que se desborden en móviles */
+}
+
+/* Botones */
+.btn {
+    padding: 14px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 140px; /* Evita que sean demasiado pequeños */
+    text-align: center;
+}
+
+/* Estilos específicos */
+.return-btn {
+    background-color: #5cb8f5;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

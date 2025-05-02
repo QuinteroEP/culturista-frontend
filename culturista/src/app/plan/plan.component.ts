@@ -99,8 +99,8 @@ export class PlanComponent {
       doc.setFont("helvetica", "bold");
 		  doc.text('Mis Guias\n', 20, currentY);
 
-      const headerGuias = [['Nombre', 'Correo','Calificación']];
-      const dataGuias = this.listaGuias.map(guia => [guia.nombre, guia.correo, guia.puntaje]);
+      const headerGuias = [['Nombre', 'Correo', 'Telefono', 'Calificación']];
+      const dataGuias = this.listaGuias.map(guia => [guia.nombre, guia.correo, guia.telefono ,guia.puntaje]);
 
       autoTable(doc, {
         head: headerGuias,

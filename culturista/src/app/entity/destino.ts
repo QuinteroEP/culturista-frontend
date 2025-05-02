@@ -1,5 +1,5 @@
 export interface destino{
-    id: number;
+    id?: number;
     nombre: string;
     descripcion: string;
     imagen: string;
@@ -7,4 +7,6 @@ export interface destino{
     ubicacion: string;
     fecha: string;
     precio: number;
+    organizer_id: number;
+    capacidad: number;
 }

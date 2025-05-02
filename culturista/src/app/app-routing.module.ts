@@ -15,6 +15,7 @@ import { OrganizerLoginComponent } from './login/organizer/organizerLogin.compon
 import { OrganizerSignupComponent } from './registro/organizer/organizerSignup.component';
 import { DashboardComponent } from './organizadores/dashboard/dashboard.component';
 import { InformacionGuiasComponent } from './guias/informacion/informacion.component';
+import { CrearComponent } from './destino/crear/crear.component';
 
 
 export const routes: Routes = [
@@ -25,6 +26,8 @@ export const routes: Routes = [
   { path: 'formulario/guias', component: GuiasComponent },
 
   { path: 'destinos/info/:id', component: InformacionComponent},
+  { path: 'destinos/crear', component: CrearComponent},
+
 
   { path: 'plan', component: PlanComponent},
 
