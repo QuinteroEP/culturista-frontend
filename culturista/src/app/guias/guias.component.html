@@ -12,8 +12,8 @@
             <div class="contacto">{{ guias.correo }}</div>
             <div class="contacto">{{ guias.telefono }}</div>
             <div class="button-group">
-              <button class="btn-agregar" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
-              <button class="btn-agregar" (click)="goToInfo(guias.id)">Ver Información</button>
+              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
+              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="goToInfo(guias.id)">Ver Información</button>
             </div>
           </div>
         </div>

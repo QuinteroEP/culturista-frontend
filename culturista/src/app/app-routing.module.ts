@@ -16,6 +16,7 @@ import { OrganizerSignupComponent } from './registro/organizer/organizerSignup.c
 import { DashboardComponent } from './organizadores/dashboard/dashboard.component';
 import { InformacionGuiasComponent } from './guias/informacion/informacion.component';
 import { CrearComponent } from './destino/crear/crear.component';
+import { CrearGuiasComponent } from './guias/crear/crear.component';
 
 
 export const routes: Routes = [
@@ -43,6 +44,8 @@ export const routes: Routes = [
   { path: 'organizer/dashboard', component: DashboardComponent },
 
   { path: 'guias/informacion/:id', component: InformacionGuiasComponent },
+
+  { path: 'guias/crear', component: CrearGuiasComponent },
 ];
 
 @NgModule({

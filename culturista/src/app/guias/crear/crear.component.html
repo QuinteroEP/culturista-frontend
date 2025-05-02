@@ -1,0 +1,12 @@
+<form class="form" (ngSubmit)="createGuide(form)" #form="ngForm">
+    <label>Nombre</label>
+    <input type="text" name="nombre" [(ngModel)]="guia.nombre" required />
+
+    <label>Telefono</label>
+    <input type="number" name="telefono" [(ngModel)]="guia.telefono" required />
+
+    <label>Correo</label>
+    <input type="email" name="correo" [(ngModel)]="guia.correo" required />
+
+    <button type="submit" [disabled]="form.invalid">Confirmar</button>
+</form>

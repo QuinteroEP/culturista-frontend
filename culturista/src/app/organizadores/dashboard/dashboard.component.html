@@ -43,7 +43,7 @@
 <h2>Mis Guias</h2>
 <div class="button-container-alt">
     <div class="button-group">
-        <button>Agregar</button>
+        <button (click)="agregarGuia()">Agregar</button>
     </div>
 </div>
 
@@ -65,13 +65,13 @@
                       </div>
                     <tr *ngFor="let guias of listaGuias" >
                       <td> {{guias.nombre}} </td>
-                      <td></td>
-                      <td></td>  
+                      <td>Monserrate</td>
+                      <td> {{guias.puntaje}} </td>  
                       <td>    
                         <div class="button-group">
-                            <button>Ver Informacion</button>
-                            <button (click)="actualizarDestino(guias.id)">Modificar</button>
-                            <button class="Delete" (click)="eliminarGuia(guias.id)">Eliminar</button>  
+                            <button *ngIf="guias.id !== undefined" (click)="informacionGuia(guias.id)">Ver Informacion</button>
+                            <button *ngIf="guias.id !== undefined" (click)="actualizaGuia(guias.id)">Modificar</button>
+                            <button class="Delete" *ngIf="guias.id !== undefined" (click)="eliminarGuia(guias.id)">Eliminar</button>
                         </div>    
                     </td>  
                     </tr>

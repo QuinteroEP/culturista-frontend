@@ -73,4 +73,16 @@ export class DashboardComponent {
     );
   }
 
+  informacionGuia(id: number) {
+    this.router.navigate(['/guias', 'informacion', id]);
+  }
+
+  agregarGuia(){
+    this.router.navigate(['/guias/crear'], { queryParams: { modo: 'agregar' } });
+  }
+
+  actualizaGuia(id: number) {
+    this.router.navigate(['/guias/crear'], { queryParams: { modo: 'editar', id } });
+  }
+
 }

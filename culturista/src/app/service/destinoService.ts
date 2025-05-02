@@ -33,7 +33,7 @@ export class destinoService {
   }
 
   updateDestino(destino: destino, id:number): Observable<any> {
-    return this.http.put('http://localhost:8090/destino/update/'+id, destino);
+    return this.http.post('http://localhost:8090/destino/update/'+id, destino);
   }
 
   filterList(tipo: string[], ubicacion: string, inicio: Date, fin: Date, precio: number, viajeros: number): Observable<destino[]> {

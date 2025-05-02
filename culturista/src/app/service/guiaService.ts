@@ -31,6 +31,14 @@ export class guiaService {
   }
 
   deleteGuia(id:number):Observable<guia>{
-      return this.http.delete<guia>('http://localhost:8090/guias/delete/' + id, { responseType: 'text' as 'json' });
-    }
+    return this.http.delete<guia>('http://localhost:8090/guias/delete/' + id, { responseType: 'text' as 'json' });
+  }
+
+  addGuia(guia: guia): Observable<any> {
+    return this.http.post('http://localhost:8090/guias/add', guia);
+  }
+  
+  updateGuia(guia: guia, id:number): Observable<any> {
+    return this.http.post('http://localhost:8090/guias/update/'+id, guia);
+  }
 }
