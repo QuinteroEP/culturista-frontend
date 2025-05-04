@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <form class="form" (ngSubmit)="createGuide(form)" #form="ngForm">
     <label>Nombre</label>
     <input type="text" name="nombre" [(ngModel)]="guia.nombre" required />
@@ -10,3 +11,32 @@
 
     <button type="submit" [disabled]="form.invalid">Confirmar</button>
 </form>
+=======
+<section class="form-section">
+    <div class="overlay"></div>
+
+    <div class="form-container">
+        <h2>Registrar Guía</h2>
+        <form class="form" (ngSubmit)="createGuide(form)" #form="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="guia.nombre" required />
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="number" id="telefono" name="telefono" [(ngModel)]="guia.telefono" required />
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" [(ngModel)]="guia.correo" required />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" [disabled]="form.invalid">Confirmar</button>
+            </div>
+        </form>
+    </div>
+</section>
+>>>>>>> Stashed changes

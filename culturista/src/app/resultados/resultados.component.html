@@ -1,35 +1,50 @@
-<!-- Contenedor general de las tarjetas -->
-<h1 *ngIf="listaDestinos.length !== 0">Estos fueron tus Resultados!</h1>
+<!-- Título principal -->
+<h1 *ngIf="listaDestinos.length !== 0" class="page-title">
+  Estos fueron tus Resultados!
+</h1>
 
 <div class="cards-wrapper">
 
-  <!-- TARJETA 1 -->
-  <div class="horizontal-card">
-    <div *ngIf="listaDestinos.length === 0" class="error_message">
-      <p>Lo sentimos, no se encontraron resultados para tu búsqueda</p>
-    </div>
+  <!-- Mensaje de error cuando no hay destinos -->
+  <div *ngIf="listaDestinos.length === 0" class="error-message">
+    <p>Lo sentimos, no se encontraron resultados para tu búsqueda</p>
+  </div>
+
+  <!-- Una tarjeta por cada destino -->
+  <div *ngFor="let destino of listaDestinos" class="card">
     <div class="card-content">
-      <table>
-        <tbody>
-          <tr *ngFor="let destinos of listaDestinos">
-            <td><img src="assets/playa.png" alt="Imagen" /></td>
-            <td>{{destinos.nombre}}</td>
-            <td>{{destinos.descripcion}}</td>
-            <td>Actividad de tipo {{destinos.tipo}}</td>
-            <td>Fecha {{destinos.fecha}}</td>
-            <td>
-              <div class="button-group">
-                <button *ngIf="destinos.id !== undefined" (click)="addToPlan(destinos.id)" [disabled]="agregados.has(destinos.id)">Agregar al Itinerario</button>
-                <button class="table-btn" *ngIf="destinos.id !== undefined" (click)="goToInfo(destinos.id)">Más Información</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <img src="assets/montania.jpg" alt="Imagen de {{ destino.nombre }}" />
+      <h2>{{ destino.nombre }}</h2>
+      <p>{{ destino.descripcion }}</p>
+      <p>Actividad de tipo {{ destino.tipo }}</p>
+      <p>Fecha {{ destino.fecha }}</p>
+      <div class="button-group">
+        <button
+          *ngIf="destino.id !== undefined"
+          (click)="addToPlan(destino.id)"
+          [disabled]="agregados.has(destino.id)"
+        >
+          Agregar al Itinerario
+        </button>
+        <button
+          class="info-btn"
+          *ngIf="destino.id !== undefined"
+          (click)="goToInfo(destino.id)"
+        >
+          Más Información
+        </button>
+      </div>
     </div>
   </div>
+
 </div>
 
 <div *ngIf="listaDestinos.length !== 0" class="button-container">
-    <button class="register-btn" (click)="goToGuides()" [disabled]="!canContinue">Siguiente Paso</button>
+  <button
+    class="register-btn"
+    (click)="goToGuides()"
+    [disabled]="!canContinue"
+  >
+    Siguiente Paso
+  </button>
 </div>

@@ -1,50 +1,229 @@
-/* Contenedor para la sección de organizadores (puedes envolver el HTML en un <div class="organizer-call-to-action">) */
-.organizer-call-to-action {
-    background-color: #f8f8f8;
-    border: 2px solid #ccc;
+/* Contenedores */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* ===== 1. Hero ===== */
+  .organizer-hero {
+    position: relative;
+    background: url("/assets/hero-org.png") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .organizer-hero .overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .hero-content {
+    position: relative; z-index: 1;
+    color: #fff;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  .btn-primary {
+    background-color: #5cb8f5;
+    border: 2px solid black;
     border-radius: 10px;
-    padding: 30px 40px;
-    max-width: 500px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-
-.organizer-call-to-action h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-
-.organizer-call-to-action button {
-    font-size: 20px;
-    padding: 12px 24px;
-    background-color: #00bfff;
-    color: #000;
-    border: 1px solid #000;
-    border-radius: 8px;
+    color: black;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    transition: background 0.3s, transform 0.2s;
+  }
 
-.organizer-call-to-action button:hover {
-    background-color: #0d8eb6;
-    transform: scale(1.05);
-}
-
-.organizer-benefits {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
-    line-height: 1.6;
-    font-size: 20px;
-}
-
-.organizer-benefits h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-    color: #222;
+  .btn-primary:hover {
+    background: #009acd;
+    transform: translateY(-2px);
+  }
+  
+  /* ===== 2. Beneficios ===== */
+  .organizer-benefits {
+    padding: 4rem 0;
+  }
+  .organizer-benefits h2 {
     text-align: center;
-}
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .benefits-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  @media(min-width: 768px) {
+    .benefits-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media(min-width: 1024px) {
+    .benefits-grid { grid-template-columns: repeat(4,1fr); }
+  }
+  .benefit-card {
+    background: #f5f7fa;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .benefit-card:nth-child(even) { background: #e8f1fa; }
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .benefit-card .icon {
+    font-size: 2.5rem;
+    color: #00C0F2;
+    margin-bottom: 1rem;
+  }
+  .benefit-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .benefit-card p {
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* ===== 3. Cómo Funciona ===== */
+  .organizer-steps {
+    padding: 4rem 0;
+  }
+  .organizer-steps h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .steps-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  @media(min-width: 768px) {
+    .steps-grid { grid-template-columns: repeat(4,1fr); }
+  }
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .step-number {
+    display: inline-block;
+    width: 3rem; height: 3rem;
+    line-height: 3rem;
+    background: #00C0F2;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .step h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  .step p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* ===== 4. Testimonios Mejorados ===== */
+.organizer-testimonials {
+    padding: 4rem 0;
+    background: #f5f7fa;
+  }
+  
+  .organizer-testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid con más separación y tarjetas más vistosas */
+  .testimonials-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Tarjeta de testimonio */
+  .testimonial-card {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  /* Comillas decorativas */
+  .testimonial-card::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 5rem;
+    color: rgba(0,0,0,0.05);
+    font-family: serif;
+  }
+  
+  /* Texto del testimonio */
+  .testimonial-card p {
+    font-style: italic;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Autor */
+  .testimonial-card cite {
+    display: block;
+    text-align: right;
+    font-weight: 600;
+    color: #222;
+    position: relative;
+  }
+  
+  /* Línea decorativa debajo del cite */
+  .testimonial-card cite::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #00C0F2;
+    margin: 0.5rem auto 0;
+  }
+  
+  
+  /* Hero — ya tiene fondo de imagen */
+
+/* Beneficios: fondo muy claro */
+.organizer-benefits {
+    background-color: #f9fcff;  /* azul pastel muy suave */
+    padding: 4rem 0;
+  }
+  
+  /* Testimonios: vuelve al blanco para contraste */
+  .organizer-testimonials {
+    background-color: #ffffff;
+    padding: 4rem 0;
+  }

@@ -1,106 +1,127 @@
-/* Contenedor general */
 .container {
-    width: 100%; /* Usa todo el ancho */
-    max-width: none; /* Sin restricciones */
-    margin: 50px 0; /* Más espacio superior e inferior */
-    padding: 35px 6%; /* Más padding */
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 960px;
+    margin: 120px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Encabezado con imagen y texto */
+/* Encabezado */
 .header {
     display: flex;
     align-items: center;
-    gap: 30px; /* Más espacio entre imagen y texto */
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 /* Imagen */
 .place-image {
-    width: 180px; /* Más grande */
-    height: 180px;
-    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Texto */
 .text-container {
-    flex-grow: 1;
+    flex: 1;
 }
 
 h1 {
-    font-size: 38px; /* Más grande */
-    max-width: 90%;
+    font-size: 36px;
+    margin: 0 0 12px;
 }
 
-.description, .precio {
-    font-size: 20px; /* Más grande */
-    color: #333;
-    margin-top: 12px;
+.description {
+    font-size: 18px;
+    color: #555;
     line-height: 1.6;
-    max-width: 90%;
 }
 
 /* Información */
 .info {
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .info p {
-    font-size: 20px; /* Más grande */
+    font-size: 18px;
     margin: 10px 0;
+    color: #222;
+}
+
+.precio {
+    font-weight: 600;
+    color: #007BFF;
 }
 
 .info ul {
-    padding-left: 30px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
 }
 
 .info ul li {
-    font-size: 19px; /* Más grande */
-    margin: 7px 0;
+    font-size: 17px;
+    margin: 8px 0;
+    padding-left: 1.2em;
+    position: relative;
 }
 
-/* Botones alineados correctamente */
-.buttons {
-    display: flex;
-    justify-content: center; /* Centra los botones */
-    gap: 20px; /* Espacio entre botones */
-    margin-top: 30px;
-    flex-wrap: wrap; /* Evita que se desborden en móviles */
+.info ul li::before {
+    content: "•";
+    color: #007BFF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 /* Botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
 .btn {
-    padding: 14px 20px;
-    font-size: 18px;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
-    min-width: 140px; /* Evita que sean demasiado pequeños */
-    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 160px;
 }
 
-/* Estilos específicos */
 .add-btn {
     background-color: #5cb8f5;
+    border: 1px solid black;
+    border-radius: 10px;
     color: black;
-    font-weight: bold;
+}
+
+.add-btn:hover {
+    background-color: #005fa3;
+    color: white;
 }
 
 .return-btn {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: 2px solid black;
+    background-color: transparent;
+    color: #00C0F2;
+    border: 2px solid #00C0F2;
 }
 
 .btn:hover {
-    opacity: 0.8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
 
-
-/* 🔹 RESPONSIVE DESIGN */
+/* Responsive */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -108,18 +129,18 @@ h1 {
     }
 
     .place-image {
-        width: 130px;
-        height: 130px;
+        width: 100%;
+        height: auto;
     }
 
     h1 {
-        font-size: 32px;
-        max-width: 100%;
+        font-size: 28px;
     }
 
-    .description {
-        font-size: 18px;
-        max-width: 100%;
+    .description,
+    .info p,
+    .info ul li {
+        font-size: 16px;
     }
 
     .buttons {
@@ -128,6 +149,6 @@ h1 {
     }
 
     .btn {
-        width: 100%; /* Botones ocupan todo el ancho en móviles */
+        width: 100%;
     }
 }

@@ -1,137 +1,213 @@
+/* 0. Reset y base */
 body {
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-    margin: 0;
-    padding: 0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  font-family: "Roboto", sans-serif;
+}
+
+/* 1. Hero wrapper */
+.travel-planner {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* 2. Fondo del hero */
+.travel-planner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;    /* cubre todo el ancho */
+  height: 100%;
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("/assets/hero.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+/* 3. Agrupar texto en panel-text */
+.panel-text {
+  position: relative;
+  z-index: 1;      /* por encima del fondo */
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 4. Layout desktop: texto 50% */
+@media (min-width: 768px) {
   .travel-planner {
-    text-align: center;
-    padding: 40px 20px;
-    max-width: 960px;
-    margin: auto;
-  }
-  
-  .title {
-    font-size: 40px;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 8px;
-  }
-
-  .subtitle {
-    font-size: 22px;
-    color: #555;
-    margin-bottom: 24px;
-  }
-
-  .slogan {
-    font-size: 24px;
-    font-weight: 500;
-    color: #222;
-    margin-bottom: 32px;
-  }
-  
-  .button-container {
-    margin-bottom: 32px;
-  }
-
-  .register-btn {
-    background-color: #00bfff;
-    color: #000;
-    padding: 14px 32px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    font-size: 22px;
-    font-weight: 700;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .register-btn:hover {
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-  }
-  
-  /* Separador */
-  .divider {
-    width: 50%;
-    border: none;
-    border-top: 2px solid #ddd;
-    margin: 32px auto;
-  }
-  
-  .benefits {
-    max-width: 800px;
-    margin: 0 auto 40px;
+    flex-direction: row;
+    justify-content: flex-start;
     text-align: left;
-  }
-
-  .benefits h3 {
-    font-size: 24px;
-    color: #0077b6;
-    margin-bottom: 16px;
-  }
-
-  .benefits ul {
-    list-style: none;
+    align-items: center;
     padding: 0;
   }
 
-  .benefits li {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
+  .panel-text {
+    width: 50%;    /* texto ocupa sólo la mitad izquierda */
+    padding: 0 2rem;
   }
+}
 
-  .benefits .icon {
-    margin-right: 8px;
-    font-size: 18px;
-  }
-  
+/* 5. Tipografía y espaciados dentro del panel-text */
+.travel-planner .title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.travel-planner .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+.travel-planner .button-container {
+  margin-bottom: 1.5rem;
+}
+.travel-planner .slogan {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.travel-planner .divider {
+  width: 60px;
+  border: none;
+  border-top: 2px solid rgba(255,255,255,0.7);
+  margin: 2rem auto;
+}
 
-  .sections-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
+/* 6. Botón */
+.travel-planner .register-btn {
+  cursor: pointer;
+  background-color: #5cb8f5;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
 
-  .section-item {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.travel-planner .register-btn:hover {
+  background-color: #005fa3;
+    color: white;
+    transform: scale(1.05);
+}
 
-  .section-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
+/* 7. Ocultar beneficios y secciones bajo el hero */
+.travel-planner .benefits,
+.travel-planner .sections-container {
+  position: absolute;
+  bottom: -2000px;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
 
-  .section-item .content {
-    padding: 20px;
-    text-align: left;
-  }
+/* 8. Mostrar contenido al hacer scroll */
+body.scrolled .travel-planner .benefits,
+body.scrolled .travel-planner .sections-container {
+  position: static;
+  bottom: auto;
+  opacity: 1;
+  margin: 4rem 2rem 2rem;
+}
 
-  .section-item h3 {
-    font-size: 20px;
-    color: #00bfff;
-    margin: 0 0 8px;
-  }
+/* 9. Ajustes responsivos */
+@media (min-width: 640px) {
+  .travel-planner .title { font-size: 4rem; }
+  .travel-planner .subtitle { font-size: 1.4rem; }
+}
+@media (min-width: 1024px) {
+  .travel-planner .title { font-size: 5rem; }
+  .travel-planner .subtitle { font-size: 1.6rem; }
+}
 
-  .section-item p {
-    font-size: 15px;
-    color: #555;
-    margin: 0;
-  }
+/* ———————————————————————————————— */
+/* 10. Sección de Itinerarios Destacados */
+.featured-itineraries {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  text-align: center;
+}
 
-  .section-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+.featured-itineraries .section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00C0F2;
+}
+
+/* Grid responsivo */
+.itinerary-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .itinerary-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (min-width: 1024px) {
+  .itinerary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjetas */
+.itinerary-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.itinerary-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Contenido interno */
+.itinerary-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itinerary-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.itinerary-content p {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Botón “Ver más” ya lo tienes como .preview-btn */

@@ -1,17 +1,84 @@
-<!-- Caja de registro del organizador -->
-<div class="organizer-call-to-action">
-    <h1>¿Eres organizador turístico y te interesa publicar tu negocio en nuestra página?</h1>
-    <button (click)="goToRegistro()">Crea una cuenta de organizador</button>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- 1. Hero -->
+<section class="organizer-hero">
+  <div class="overlay"></div>
+  <div class="hero-content container">
+    <h1>Únete a CulTurista como Organizador</h1>
+    <p class="hero-subtitle">
+      Publica tus actividades y llega a miles de viajeros buscando experiencias auténticas.
+    </p>
+    <button class="btn-primary" (click)="goToRegistro()">Crea tu cuenta gratis</button>
   </div>
-  
-  <!-- Sección de beneficios -->
-  <div class="organizer-benefits">
-    <h1>¿Porque deberia inscribirme a CulTurista?</h1>
-    <p>Al unirte a nuestra plataforma, podrás disfrutar de múltiples beneficios que potenciarán tu negocio:</p>
-    <ul>
-        <li><strong>Mayor visibilidad:</strong> Llega a una audiencia más amplia y aumenta tus oportunidades de negocio.</li>
-        <li><strong>Conexión con clientes potenciales:</strong> Facilita el contacto directo con viajeros interesados en tus servicios.</li>
-        <li><strong>Soporte y asesoría:</strong> Recibe orientación para optimizar la presentación de tus ofertas turísticas.</li>
-    </ul>
+</section>
+
+<!-- 2. Beneficios -->
+<section class="organizer-benefits container">
+  <h2>¿Por qué inscribirme?</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <i class="ri-eye-line icon"></i>
+      <h3>Visibilidad Máxima</h3>
+      <p>Llega a una audiencia amplia y aumenta tus reservas.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="ri-wallet-line icon"></i>
+      <h3>Ingresos Extras</h3>
+      <p>Monetiza tu conocimiento y tus rutas únicas.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="ri-feedback-line icon"></i>
+      <h3>Feedback Real</h3>
+      <p>Mejora con reseñas y recomendaciones de viajeros.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="ri-headphone-line icon"></i>
+      <h3>Soporte 24/7</h3>
+      <p>Equipo dedicado para ayudarte en cada paso.</p>
+    </div>
   </div>
-  
+</section>
+
+<!-- 3. Cómo Funciona -->
+<hr>
+<section class="organizer-steps container">
+  <h2>¿Cómo Funciona?</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <span class="step-number">1</span>
+      <h4>Registro</h4>
+      <p>Crea tu perfil en menos de 2 minutos.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">2</span>
+      <h4>Publica tu Oferta</h4>
+      <p>Agrega fotos, descripción y precios.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">3</span>
+      <h4>Recibe Reservas</h4>
+      <p>Gestiona solicitudes desde tu panel.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">4</span>
+      <h4>Cobra y Crece</h4>
+      <p>Aumenta tus ingresos y reputación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Testimonios -->
+<hr>
+<section class="organizer-testimonials container">
+  <h2>Testimonios</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p>"Desde que me uní, mis ventas crecieron un 120%."</p>
+      <cite>— TourSalento</cite>
+    </div>
+    <div class="testimonial-card">
+      <p>"El soporte es excelente y mis viajeros están encantados."</p>
+      <cite>— AventuraAmazonas</cite>
+    </div>
+  </div>
+</section>

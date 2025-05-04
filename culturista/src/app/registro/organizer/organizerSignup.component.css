@@ -1,28 +1,55 @@
-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 2rem;
+/* 1. Sección de fondo full‑screen */
+.register-section {
+    padding-top: 95px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url("/assets/fondo.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 2. Overlay oscuro para contraste */
+  .register-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 3. Contenedor del formulario */
+  .register-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem 2rem;
     border-radius: 12px;
-    background-color: #f9f9f9;
-    border: 1px solid #000000;
-}
-
-form h1 {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 420px;
+  }
+  
+  /* 4. Título */
+  .register-container h1 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #333;
-}
-
-form label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+  }
+  
+  /* 5. Labels e inputs */
+  .register-container label {
     display: block;
     margin-bottom: 0.3rem;
     font-weight: bold;
     color: #333;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
+  }
+  
+  .register-container input[type="text"],
+  .register-container input[type="email"],
+  .register-container input[type="number"],
+  .register-container input[type="password"] {
     width: 100%;
     padding: 0.6rem;
     margin-bottom: 1rem;
@@ -31,32 +58,55 @@ form input[type="password"] {
     box-sizing: border-box;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-}
-
-form input:focus {
+  }
+  
+  .register-container input:focus {
     border-color: #00bfff;
     outline: none;
-}
-
-form button {
+  }
+  
+  /* 6. Botones */
+  .register-container button {
     width: 100%;
     padding: 0.75rem;
     margin-top: 0.5rem;
-    background-color: #00bfff;
-    color: black;
+    background-color: #5cb8f5;
     border: 1px solid black;
-    border-radius: 8px;
+    border-radius: 10px;
+    color: black;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
 
-form button:hover {
+  .register-container button:hover {
+    background-color: #005fa3;
+    color: white;
+  }
+  
+  .register-container .btn-secondary {
+    background-color: #fff;
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    margin-top: 0.5rem;
+  }
+  .register-container button:hover:not(:disabled) {
     background-color: #0c8ddd;
-}
-
-.error{
-    color: red;
-    font-size: 20px;
-}
+    transform: translateY(-2px);
+  }
+  .register-container .btn-secondary:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+  }
+  
+  /* 7. Input inválido */
+  .register-container input.ng-invalid.ng-touched {
+    border-color: #e74c3c;
+  }
+  .register-container .error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  

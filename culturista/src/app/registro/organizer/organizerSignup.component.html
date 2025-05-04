@@ -1,28 +1,36 @@
-<form (ngSubmit)="registerOrg(form)" #form="ngForm">
-    <h1>Nueva cuenta de Organizador</h1>
-
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" ngModel required>
-
-    <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" name="apellido" ngModel required>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" ngModel required>
-
-    <label for="telefono">Teléfono</label>
-    <input type="number" id="telefono" name="telefono" ngModel required>
-
-    <label for="Cedula">Cédula</label>
-    <input type="number" id="Cedula" name="Cedula" ngModel required>
-
-    <label for="password">Contraseña</label>
-    <input type="password" id="password" name="password" ngModel required>
-
-    <label for="confirmarPassword">Confirmar Contraseña</label>
-    <input type="password" id="confirmarPassword" name="confirmarPassword" ngModel required>
-
-    <button type="submit" [disabled]="form.invalid">Crear mi cuenta</button>
-    <button (click)="goToLogin()">Ya tengo cuenta</button>
-    <p class="error"> {{ errorMessage }}</p>
-</form>
+<section class="register-section">
+    <div class="overlay"></div>
+    <div class="register-container">
+  
+      <form (ngSubmit)="registerOrg(form)" #form="ngForm">
+        <h1>Nueva cuenta de Organizador</h1>
+  
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" ngModel required>
+  
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" ngModel required>
+  
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ngModel required>
+  
+        <label for="telefono">Teléfono</label>
+        <input type="number" id="telefono" name="telefono" ngModel required>
+  
+        <label for="Cedula">Cédula</label>
+        <input type="number" id="Cedula" name="Cedula" ngModel required>
+  
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" ngModel required>
+  
+        <label for="confirmarPassword">Confirmar Contraseña</label>
+        <input type="password" id="confirmarPassword" name="confirmarPassword" ngModel required>
+  
+        <button type="submit" [disabled]="form.invalid">Crear mi cuenta</button>
+        <button type="button" (click)="goToLogin()">Ya tengo cuenta</button>
+        <p class="error">{{ errorMessage }}</p>
+      </form>
+  
+    </div>
+  </section>
+  

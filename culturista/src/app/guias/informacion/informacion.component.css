@@ -1,12 +1,16 @@
 .guia-container {
     max-width: 700px;
-    margin: 40px auto;
+    margin: 150px auto;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', sans-serif;
     color: #333;
+}
+
+.guia-img {
+    max-width: 200px;
 }
 
 .guia-nombre {

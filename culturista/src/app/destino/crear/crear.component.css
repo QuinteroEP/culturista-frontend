@@ -1,103 +1,124 @@
-.form {
-    background-color: white;
-    color: black;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    border: 2px solid #ccc;
+/* Fondo general con overlay */
+.form-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url("/assets/fondo.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
+.form-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor del formulario */
+.form-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 520px;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
 .form-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: black;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
-label {
+/* Agrupación de campos */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
     display: block;
-    font-size: 18px;
-    margin-top: 15px;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
     font-weight: bold;
+    color: #333;
 }
 
-input,
-select {
-    box-sizing: border-box;
+/* Inputs y selects */
+.form-group input,
+.form-group select,
+.descripcion-textarea {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 5px;
+    padding: 0.6rem;
+    font-size: 1rem;
     border: 2px solid #bbb;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: white;
     color: black;
     outline: none;
-    display: block;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-input:focus,
-select:focus {
+.form-group input:focus,
+.form-group select:focus,
+.descripcion-textarea:focus {
     border-color: #00bfff;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #00bfff;
-    color: rgb(0, 0, 0);
-    border: black;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Textarea */
+.descripcion-textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
-button:hover {
-    background-color: #0d8eb6;
-    transform: scale(1.05);
+/* Botón principal */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #5cb8f5;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 0.8rem;
+}
+
+button:hover:not(:disabled) {
+    background-color: #005fa3;
+    color: white;
+    transform: translateY(-2px);
 }
 
 button:disabled {
-    background-color: #00bfff;
+    background-color: #007ea8;
     cursor: not-allowed;
 }
 
-.checkbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 30px;
-    margin: 10px 0 20px 0;
+/* Validación */
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border-color: #e74c3c;
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.checkbox-container input[type="checkbox"] {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-.checkbox-container label {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 0;
-    vertical-align: middle;
-}
-
+/* Responsive */
 @media (max-width: 600px) {
-    .checkbox-grid {
-        grid-template-columns: 1fr;
+    .form-container {
+        padding: 1.5rem 1rem;
     }
+}
+
+.form-container {
+    margin-top: 120px;
 }

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .form {
     background-color: white;
     color: black;
@@ -43,10 +44,82 @@ select {
 input:focus,
 select:focus {
     border-color: #00bfff;
+=======
+/* Sección principal con imagen de fondo y overlay oscuro */
+.form-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px; /* Separación desde el header */
+    background: url("/assets/fondo.jpg") center/cover no-repeat;
+    overflow: hidden; /* para evitar desbordes del overlay */
+}
+
+/* Capa oscura encima del fondo */
+.form-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    position: relative; /* para que esté encima del overlay */
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    animation: fadeInUp 0.5s ease; /* animación suave */
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+>>>>>>> Stashed changes
 }
 
 button {
     width: 100%;
+<<<<<<< Updated upstream
     padding: 12px;
     margin-top: 20px;
     font-size: 20px;
@@ -100,4 +173,23 @@ button:disabled {
     .checkbox-grid {
         grid-template-columns: 1fr;
     }
+=======
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+button:hover:enabled {
+    background-color: #005f8a;
+>>>>>>> Stashed changes
 }

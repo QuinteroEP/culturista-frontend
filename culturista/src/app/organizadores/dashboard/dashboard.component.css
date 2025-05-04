@@ -1,135 +1,180 @@
-.horizontal-card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 8px;
-    padding: 16px;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .horizontal-card img {
-    width: 180px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-right: 16px;
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  .card-content h2 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 20px;
-  }
-  
-  .card-content p {
-    margin: 0 0 16px;
-    font-size: 16px;
-    line-height: 1.4;
-  }
+/* ===== Tipografía y fondo general ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fc;
+  color: #2d3748;
+  margin: 0;
+  padding: 0;
+}
 
-  .card-content td {
-    font-size: 20px;
-    line-height: 1.4;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  .button-group {
-    margin-top: auto;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button-group button {
-    background-color: #5cb8f5;
-    color: #000;
-    padding: 10px 12px;
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid #000;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .button-group button:hover {
-    background-color: #005fa3;
-    transform: scale(1.05);
-  }
-
-  .cards-wrapper {
-    display: grid;
-    /*
-      minmax(650px, 1fr) hace que cada tarjeta tenga
-      un ancho mínimo de 650px antes de "romper" a una sola columna.
-      Ajusta este número a tu preferencia.
-    */
-    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
-    
-    gap: 50px;
-    
-    width: 100%;
-    margin: 0;
-    
-    padding: 30px;
-    
-    box-sizing: border-box;
-  }
-
+/* ===== Encabezados ===== */
 h1 {
-    font-size: 50px; /* Tamaño más grande */
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+  /* Desplaza el título bajo el header fijo */
+  margin-top: 120px;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1a202c;
+}
 
 h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
   text-align: center;
-  font-size: 35px; /* Tamaño más grande */
-  font-weight: bold;
-  margin-bottom: 20px;
+  margin: 2rem 1rem 1rem;
+  color: #4a5568;
 }
 
-/* Centrar y agrandar el botón "Siguiente Paso" */
+/* ===== Botones principales ===== */
+.button-container-alt,
 .button-container {
   display: flex;
-  justify-content: center; /* Centrar el botón */
-  margin-top: 50px;
+  justify-content: center;
+  margin: 1.5rem 0;
 }
 
-.button-container-alt {
-  display: flex;
-  justify-content: center; /* Centrar el botón */
-}
-
-th{
-    font-size: 25px;
-}
-
-.delete {
-  background-color: red;
-  color: #000;
-  padding: 10px 12px;
-  font-size: 20px;
-  font-weight: bold;
-  border: 2px solid #000;
-  border-radius: 8px;
+.button-group button,
+.button-container-alt .button-group > button {
+  background-color: #5cb8f5;   /* azul solicitado */
+  border: 1px solid black;      /* borde negro */
+  border-radius: 10px;          /* esquinas redondeadas */
+  color: black;                 /* texto negro */
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.delete button:hover {
-  background-color: darkred;
-  transform: scale(1.05);
+.button-group button:hover,
+.button-container-alt .button-group > button:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
 }
 
-td{
+/* ===== Botón “Eliminar” ===== */
+.button-group .Delete {
+  background-color: #e53e3e;      /* rojo vivo */
+  border: 1px solid #a52a2a;      /* borde rojo oscuro */
+  color: white;                   /* texto blanco */
+  border-radius: 10px;
+}
+
+.button-group .Delete:hover {
+  background-color: #9b2c2c;
+  transform: translateY(-2px);
+}
+
+/* ===== Grid de tarjetas ===== */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ===== Tarjeta horizontal ===== */
+.horizontal-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.horizontal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ===== Contenido de la tarjeta ===== */
+.card-content {
+  padding: 1.5rem 2rem;
+}
+
+/* ===== Tablas limpias y legibles ===== */
+.card-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.card-content th,
+.card-content td {
+  padding: 0.75rem 1rem;
   text-align: center;
+}
+
+.card-content thead {
+  background-color: #edf2f7;
+}
+
+.card-content thead th {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.card-content tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.card-content tbody tr:hover {
+  background-color: #f0f4f8;
+}
+
+.card-content td {
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+/* ===== Mini-imagen de fila ===== */
+.card-content img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== Ajustes responsive ===== */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem 1rem;
+  }
+  h1 {
+    font-size: 2.25rem;
+    margin-top: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+  }
+  .card-content {
+    padding: 1rem 1rem;
+  }
+  .card-content thead {
+    display: none;
+  }
+  .card-content tbody tr {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 0.5rem 1rem;
+    padding: 0.75rem 0;
+  }
+  .card-content td {
+    display: block;
+    padding: 0.25rem 0;
+    text-align: left;
+  }
+  .card-content td:first-child {
+    grid-row: span 2;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

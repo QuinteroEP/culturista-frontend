@@ -1,179 +1,141 @@
-h1 {
+  /* ===== Tipografía y fondo ===== */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef2f7;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== Encabezados ===== */
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
     text-align: center;
-}
-
-button {
-    padding: 12px;
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #00bfff; /* Azul */
-    color: rgb(0, 0, 0);
-    border: black;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.horizontal-card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 8px;
-    padding: 16px;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 150px;
+    color: #1a202c;
   }
-  
-  .horizontal-card img {
-    width: 180px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-right: 16px;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2.5rem 1rem 1rem;
+    color: #4a5568;
+    padding-left: 1rem;
   }
-  
-  .card-content {
+
+  /* ===== Grid general ===== */
+  .cards-wrapper {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 3rem;
+    padding: 0 2rem;
+    align-items: center;
   }
-  
-  .card-content h2 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 20px;
-    text-align: center;
+
+  /* ===== Tarjeta grande ===== */
+  .horizontal-card {
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  
-  .card-content p {
-    margin: 0 0 16px;
-    font-size: 16px;
-    line-height: 1.4;
+
+  .horizontal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  /* ===== Contenido ===== */
+  .card-content {
+    padding: 2rem 3rem;
+  }
+
+  .card-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .card-content thead th {
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #4a5568;
+  }
+
+  .card-content tbody tr {
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  .card-content tbody tr:last-child {
+    border-bottom: none;
   }
 
   .card-content td {
-    font-size: 30px;
-    line-height: 1.4;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 1.25rem 0.75rem;
+    vertical-align: middle;
+    font-size: 1.125rem;
   }
-  
-  .button-group {
-    margin-top: auto;
+
+  /* Aumentamos la mini-imagen */
+  .card-content img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  }
+
+  /* ===== Botón centrado ===== */
+  .center-container {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    margin: 4rem 0 5rem;
   }
-  
-  .button-group button {
+
+  .download-button {
+    display: inline-block;
+    width: 260px;
+    padding: 1rem;
     background-color: #5cb8f5;
-    color: #000;
-    padding: 10px 12px;
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid #000;
-    border-radius: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  
-  .button-group button:hover {
+
+  .download-button:hover {
     background-color: #005fa3;
-    transform: scale(1.05);
+    transform: translateY(-2px);
   }
 
-  .cards-wrapper {
-    display: grid;
-    /*
-      minmax(650px, 1fr) hace que cada tarjeta tenga
-      un ancho mínimo de 650px antes de "romper" a una sola columna.
-      Ajusta este número a tu preferencia.
-    */
-    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
-    
-    gap: 50px;
-    
-    width: 100%;
-    margin: 0;
-    
-    padding: 30px;
-    
-    box-sizing: border-box;
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; text-align: center; padding-left: 0; }
+    .horizontal-card { max-width: 100%; }
+    .card-content { padding: 1.5rem 1.5rem; }
+    .card-content thead { display: none; }
+    .card-content tbody tr {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      grid-gap: 0.75rem 1rem;
+      padding: 1rem 0;
+    }
+    .card-content td {
+      display: block;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+    }
+    .card-content td:first-child { grid-row: span 2; }
+    .download-button { width: 100%; max-width: 320px; }
   }
-
-  /* Centrar y agrandar el título "Tus Resultados" */
-h1 {
-  text-align: center;
-  font-size: 50px; /* Tamaño más grande */
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-/* Centrar y agrandar el botón "Siguiente Paso" */
-.button-container {
-  display: flex;
-  justify-content: center; /* Centrar el botón */
-  margin-top: 50px;
-}
-
-.register-btn {
-  background-color: #5cb8f5;
-  color: #000;
-  padding: 14px 20px; /* Botón más grande */
-  font-size: 18px; /* Texto más grande */
-  font-weight: bold;
-  border: 2px solid #000;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.register-btn:hover {
-  background-color: #005fa3;
-  transform: scale(1.07);
-}
-
-.error_message{
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-table{
-    text-align: center;
-}
-
-th{
-  font-size: 30px;
-}
-
-h2{
-  font-size: 30px;
-  text-align: center;
-}
-
-.download-button{
-  width: 25%;
-  justify-self: center;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-}
-
-/* Center the button horizontally and vertically */
-.center-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-.download-button {
-  padding: 10px 20px; /* Add padding for a better look */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease;
-  border: 1px solid black;
-}
-
-.download-button:hover {
-  background-color: #0056b3; /* Darker background on hover */
-}
