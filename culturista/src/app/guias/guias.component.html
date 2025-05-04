@@ -1,22 +1,4 @@
 <div class="container">
-<<<<<<< Updated upstream
-    <div class="recomendacion-container">
-      <h2 class="titulo">Te recomendamos contratar un guía para:</h2>
-      <h1 class="lugar">Monserrate</h1>
-      <h3 class="subtitulo">Guías recomendados:</h3>
-  
-      <div class="guia-container">
-        <div class="guia-card" *ngFor="let guias of listaGuias">
-          <img src="assets/guia.png" alt="Guía" class="guia-img" />
-          <div class="guia-info">
-            <div id="guide_name">{{ guias.nombre }}</div>
-            <div class="contacto">{{ guias.correo }}</div>
-            <div class="contacto">{{ guias.telefono }}</div>
-            <div class="button-group">
-              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="addToPlan(guias.id)" [disabled]="agregados.has(guias.id)">Agendar</button>
-              <button class="btn-agregar" *ngIf="guias.id !== undefined" (click)="goToInfo(guias.id)">Ver Información</button>
-            </div>
-=======
   <div class="recomendacion-container">
     <h2 class="titulo">
       Te recomendamos contratar un guía para:
@@ -66,7 +48,6 @@
             >
               Ver Información
             </button>
->>>>>>> Stashed changes
           </div>
         </div>
       </div>
