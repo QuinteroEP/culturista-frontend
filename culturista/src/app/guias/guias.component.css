@@ -1,157 +1,169 @@
+/* ———————————————— */
+/* HOST: degradado global y espaciado */
+/* ———————————————— */
+:host {
+  display: block;
+  box-sizing: border-box;
+  min-height: 100vh;
+  /* espacio arriba para el header fijo y abajo para el botón */
+  padding: 140px 0 40px;
+  background: linear-gradient(to bottom, #cfe8ff, #afd7ff);
+}
+
+/* Asegúrate de que la capa .container sea transparente para dejar ver el degradado */
+:host ::ng-deep .container {
+  background: transparent;
+}
+
+/* ———————————————— */
+/* CONTENEDOR GENERAL */
+/* ———————————————— */
 .container {
-    margin-top: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding-bottom: 50px;
+  margin-top: 0;            /* ya lo maneja el padding del host */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 0;        /* ya lo maneja el padding del host */
 }
 
-/* Contenedor de recomendación */
+/* ———————————————— */
+/* RECOMENDACIÓN (blanco encima del fondo) */
+/* ———————————————— */
 .recomendacion-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 40px 20px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
 }
 
+/* ———————————————— */
+/* ENCABEZADOS */
+/* ———————————————— */
 .titulo {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
-
 .lugar {
-    font-size: 40px;
-    font-weight: 700;
-    color: #005fa3;
-    margin: 10px 0 20px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #005fa3;
+  margin: 10px 0 20px;
 }
-
 .subtitulo {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 30px;
-    color: #444;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #444;
 }
 
+/* ———————————————— */
+/* GRID DE GUÍAS */
+/* ———————————————— */
 .guia-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
 
-/* Card individual */
+/* ———————————————— */
+/* CARD DE GUÍA */
+/* ———————————————— */
 .guia-card {
-    display: flex;
-    background-color: #f5f9ff;
-    border-radius: 16px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    gap: 20px;
-    width: 100%;
-    max-width: 500px;
-    align-items: center;
+  display: flex;
+  background-color: #f5f9ff;
+  border-radius: 16px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
 }
 
 .guia-img-container {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
-
 .guia-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .guia-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
 }
-
-.guia-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .guide-name {
-    font-size: 22px;
-    font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
 }
-
-.verified-icon {
-    width: 18px;
-    height: 18px;
-}
-
-/* Contacto */
 .contacto {
-    font-size: 15px;
-    color: #555;
+  font-size: 15px;
+  color: #555;
 }
 
-/* Botones */
+/* ———————————————— */
+/* BOTONES EN LA CARD */
+/* ———————————————— */
 .button-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
-
 .btn-agregar {
-    background-color: #5cb8f5;
-    border: 1px solid black;
-    border-radius: 10px;
-    color: black;
-    padding: 8px 14px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    min-width: 110px;
+  background-color: #5cb8f5;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 110px;
 }
-
 .btn-agregar:hover {
-    background-color: #005fa3;
-    color: white;
-    transform: scale(1.05);
+  background-color: #005fa3;
+  color: white;
+  transform: scale(1.05);
 }
-
 button:disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
 }
 
-/* Botón finalizar */
+/* ———————————————— */
+/* BOTÓN FINALIZAR */
+/* ———————————————— */
 .button-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-
 .register-btn {
-    background-color: #5cb8f5;
-    color: black;
-    padding: 14px 28px;
-    font-size: 18px;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #5cb8f5;
+  color: black;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .register-btn:hover {
-    background-color: #005fa3;
-    color: white;
-    transform: scale(1.1);
+  background-color: #005fa3;
+  color: white;
+  transform: scale(1.1);
 }

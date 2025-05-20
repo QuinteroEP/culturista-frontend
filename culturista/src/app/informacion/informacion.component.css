@@ -1,154 +1,121 @@
-.container {
-    width: 100%;
-    max-width: 960px;
-    margin: 120px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+/* —— HERO SECCIÓN —— */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
+  background: url('/assets/montania.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Encabezado */
+/* —— TU CARD FLOTANTE —— */
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 960px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* —— ENCABEZADO —— */
 .header {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
-
-/* Imagen */
 .place-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-/* Texto */
-.text-container {
-    flex: 1;
-}
-
+.text-container { flex: 1; }
 h1 {
-    font-size: 36px;
-    margin: 0 0 12px;
+  font-size: 2.5rem;
+  margin: 0 0 12px;
+  color: #222;
 }
-
 .description {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
 }
 
-/* Información */
+/* —— INFORMACIÓN —— */
 .info {
-    margin-top: 30px;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
 }
-
-.info p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #222;
-}
-
-.precio {
-    font-weight: 600;
-    color: #007BFF;
-}
-
+.precio { font-weight: 600; color: #007BFF; }
 .info ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
 }
-
 .info ul li {
-    font-size: 17px;
-    margin: 8px 0;
-    padding-left: 1.2em;
-    position: relative;
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 8px;
 }
-
 .info ul li::before {
-    content: "•";
-    color: #007BFF;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00C0F2;
 }
 
-/* Botones */
+/* —— BOTONES —— */
 .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 35px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 35px;
+  flex-wrap: wrap;
 }
-
 .btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 160px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 160px;
 }
-
-.add-btn {
-    background-color: #5cb8f5;
-    border: 1px solid black;
-    border-radius: 10px;
-    color: black;
-}
-
-.add-btn:hover {
-    background-color: #005fa3;
-    color: white;
-}
-
 .return-btn {
-    background-color: transparent;
-    color: #00C0F2;
-    border: 2px solid #00C0F2;
+  background: transparent;
+  border: 2px solid #00C0F2;
+  color: #00C0F2;
 }
-
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 192, 242, 0.3);
 }
 
-/* Responsive */
+/* —— RESPONSIVE —— */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .place-image {
-        width: 100%;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    .description,
-    .info p,
-    .info ul li {
-        font-size: 16px;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        width: 100%;
-    }
+  .hero-section { height: 80vh; }
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+  .header { flex-direction: column; text-align: center; }
+  .place-image { width: 100%; height: auto; }
+  h1 { font-size: 2rem; }
+  .description, .info, .info p, .info ul li { font-size: 16px; }
+  .btn { width: 100%; }
 }

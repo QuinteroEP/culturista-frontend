@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { destino } from '../entity/destino';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tipoActividad } from '../entity/tipoActividad';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,9 @@ export class destinoService {
 
     this.sentForm = true;
     return this.http.get<destino[]>('http://localhost:8090/destino/resultados/', { params });
+  }
+
+  getTypes():Observable<tipoActividad[]>{
+    return this.http.get<tipoActividad[]>('http://localhost:8090/destino/actividades');
   }
 }

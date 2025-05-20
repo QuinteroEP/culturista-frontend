@@ -39,16 +39,6 @@ export class HeaderComponent {
     });
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const headerEl = this.el.nativeElement.querySelector('header');
-    if (window.pageYOffset > 50) {
-      this.renderer.addClass(headerEl, 'scrolled');
-    } else {
-      this.renderer.removeClass(headerEl, 'scrolled');
-    }
-  }
-
   goToHome() {
     this.router.navigate(['']);
   }

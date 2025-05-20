@@ -16,16 +16,19 @@
       <img src="assets/montania.jpg" alt="Imagen de {{ destino.nombre }}" />
       <h2>{{ destino.nombre }}</h2>
       <p>{{ destino.descripcion }}</p>
-      <p>Actividad de tipo {{ destino.tipo }}</p>
+      <p>Actividad de tipo {{ destino.tipo.tipo }}</p>
       <p>Fecha {{ destino.fecha }}</p>
       <div class="button-group">
+        <!-- Botón que se desactiva solo al hacer clic -->
         <button
           *ngIf="destino.id !== undefined"
-          (click)="addToPlan(destino.id)"
-          [disabled]="agregados.has(destino.id)"
+          #btnAgregar
+          (click)="addToPlan(destino.id); btnAgregar.disabled = true"
         >
           Agregar al Itinerario
         </button>
+
+        <!-- Botón de info -->
         <button
           class="info-btn"
           *ngIf="destino.id !== undefined"
@@ -39,6 +42,7 @@
 
 </div>
 
+<!-- Botón para avanzar -->
 <div *ngIf="listaDestinos.length !== 0" class="button-container">
   <button
     class="register-btn"

@@ -86,7 +86,7 @@ export class PlanComponent {
 		  doc.text('Mis Actividades\n', 20, 40);
 
       const headerDestinos = [['Nombre', 'Descripcion', 'Precio' ,'Fecha']];
-      const dataDestinos = this.listaDestinos.map(dest => [dest.nombre, dest.descripcion, dest.precio, dest.fecha]);
+      const dataDestinos = this.listaDestinos.map(dest => [dest.nombre, dest.descripcion, dest.precio + " COP", dest.fecha]);
 
       autoTable(doc, {
         head: headerDestinos,

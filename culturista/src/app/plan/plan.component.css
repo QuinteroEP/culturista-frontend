@@ -1,141 +1,167 @@
-  /* ===== Tipografía y fondo ===== */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #eef2f7;
-    color: #2d3748;
-    margin: 0;
-    padding: 0;
-  }
+/* ———————————————— */
+/* 1) Pinta el degradado en todo el host */
+/* ———————————————— */
+:host {
+  display: block;
+  box-sizing: border-box;
+  min-height: 100vh;
 
-  /* ===== Encabezados ===== */
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 150px;
-    color: #1a202c;
-  }
+  padding: 20px 0 80px;
 
+  background: linear-gradient(to bottom, #cfe8ff, #afd7ff);
+}
+
+/* ———————————————— */
+/* 2) Asegura que tus contenedores internos sean transparentes */
+/* ———————————————— */
+:host ::ng-deep .container,
+:host ::ng-deep .cards-wrapper,
+:host ::ng-deep .center-container {
+  background: transparent !important;
+  margin-top: 40px;  /* antes no tenía margen superior */
+  padding: 0 !important;       /* idem */
+}
+
+
+/* ———————————————— */
+/* 2) Reset de márgenes en html/body para quitar franjas blancas */
+/* ———————————————— */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Tipografía ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2d3748;
+}
+
+/* ===== Encabezados ===== */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 150px;
+  color: #1a202c;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2.5rem 1rem 1rem;
+  color: #4a5568;
+  padding-left: 1rem;
+}
+
+/* ===== Grid general ===== */
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+/* ===== Tarjeta horizontal ===== */
+.horizontal-card {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.horizontal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== Contenido de la card ===== */
+.card-content {
+  padding: 2rem 3rem;
+}
+.card-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.card-content thead th {
+  text-align: left;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+.card-content tbody tr {
+  border-bottom: 1px solid #edf2f7;
+}
+.card-content tbody tr:last-child {
+  border-bottom: none;
+}
+.card-content td {
+  padding: 1.25rem 0.75rem;
+  vertical-align: middle;
+  font-size: 1.125rem;
+}
+.card-content img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* ===== Botón centrado ===== */
+.center-container {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0 5rem;
+}
+.download-button {
+  display: inline-block;
+  width: 260px;
+  padding: 1rem;
+  background-color: #5cb8f5;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.download-button:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
   h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 2.5rem 1rem 1rem;
-    color: #4a5568;
-    padding-left: 1rem;
-  }
-
-  /* ===== Grid general ===== */
-  .cards-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 0 2rem;
-    align-items: center;
-  }
-
-  /* ===== Tarjeta grande ===== */
-  .horizontal-card {
-    width: 100%;
-    max-width: 900px;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .horizontal-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-  }
-
-  /* ===== Contenido ===== */
-  .card-content {
-    padding: 2rem 3rem;
-  }
-
-  .card-content table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .card-content thead th {
-    text-align: left;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #e2e8f0;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #4a5568;
-  }
-
-  .card-content tbody tr {
-    border-bottom: 1px solid #edf2f7;
-  }
-
-  .card-content tbody tr:last-child {
-    border-bottom: none;
-  }
-
-  .card-content td {
-    padding: 1.25rem 0.75rem;
-    vertical-align: middle;
-    font-size: 1.125rem;
-  }
-
-  /* Aumentamos la mini-imagen */
-  .card-content img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  }
-
-  /* ===== Botón centrado ===== */
-  .center-container {
-    display: flex;
-    justify-content: center;
-    margin: 4rem 0 5rem;
-  }
-
-  .download-button {
-    display: inline-block;
-    width: 260px;
-    padding: 1rem;
-    background-color: #5cb8f5;
-    border: 2px solid black;
-    border-radius: 10px;
-    color: black;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 1.75rem;
     text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding-left: 0;
   }
-
-  .download-button:hover {
-    background-color: #005fa3;
-    transform: translateY(-2px);
+  .horizontal-card { max-width: 100%; }
+  .card-content { padding: 1.5rem 1.5rem; }
+  .card-content thead { display: none; }
+  .card-content tbody tr {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 0.75rem 1rem;
+    padding: 1rem 0;
   }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 768px) {
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.75rem; text-align: center; padding-left: 0; }
-    .horizontal-card { max-width: 100%; }
-    .card-content { padding: 1.5rem 1.5rem; }
-    .card-content thead { display: none; }
-    .card-content tbody tr {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      grid-gap: 0.75rem 1rem;
-      padding: 1rem 0;
-    }
-    .card-content td {
-      display: block;
-      padding: 0.25rem 0;
-      font-size: 1rem;
-    }
-    .card-content td:first-child { grid-row: span 2; }
-    .download-button { width: 100%; max-width: 320px; }
+  .card-content td {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 1rem;
   }
+  .card-content td:first-child { grid-row: span 2; }
+  .download-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
