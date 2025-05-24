@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
@@ -10,7 +10,8 @@ import { tipoActividad } from '../entity/tipoActividad';
   selector: 'app-formulario',
   imports: [FormsModule],
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrl: './formulario.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FormularioComponent {
   listaTipos!: tipoActividad[];
