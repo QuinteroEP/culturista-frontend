@@ -75,7 +75,8 @@ export class CrearComponent {
         tipo: tipo,
         descripcion: descripcion,
         organizer_id: 1,
-        imagen: 'https://www.google.com	'
+        imagen: 'https://www.google.com	',
+        recomendaciones: []
       }
 
       if (this.modo == 'agregar') {

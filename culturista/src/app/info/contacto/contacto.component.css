@@ -1,57 +1,107 @@
-/* Contenedor para la sección de contacto */
-.contact-section {
-    background: #ffffff; /* Fondo blanco limpio */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px 40px;
-    margin: 30px auto;
+/* Contenedor central */
+.contact-section .container {
     max-width: 800px;
-}
-
-/* Título principal de la sección */
-.contact-section h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #00bfff; /* línea de acento */
-    padding-bottom: 10px;
-}
-
-/* Subtítulo */
-.contact-section h2 {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-/* Estilo para la lista de contactos */
-.contact-section ul {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Fondo y sombreado */
+  .contact-section {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin: 3rem auto;
+  }
+  
+  /* Títulos */
+  .contact-section h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #00C0F2;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .contact-section h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Lista de contactos */
+  .contact-list {
     list-style: none;
     padding: 0;
+    margin: 0 0 2rem;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+  }
+  .contact-list li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .contact-list li:hover {
+    background: #f0f8ff;
+  }
+  
+  /* Icono de contacto */
+  .contact-icon {
+    font-size: 2rem;
+    color: #00C0F2;
+  }
+  
+  /* Información de contacto */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-name {
+    font-weight: 600;
+    color: #222;
     margin: 0;
-}
-
-.contact-section ul li {
-    border: 1px solid #d0e9ff;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    transition: background 0.3s ease;
-}
-
-.contact-section ul li:hover {
-    background: #e6f7ff;
-}
-
-/* Estilo para los párrafos */
-.contact-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.contact-section ul li p {
-    margin: 0;
-    font-weight: 500;
+  }
+  .contact-email {
     color: #006bb3;
-}
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .contact-email:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mapa incrustado */
+  .map-container {
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  /* Horarios */
+  .office-hours {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .office-hours h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  .office-hours p {
+    margin: 0.25rem 0;
+    color: #555;
+  }
+  
+  /* Pie de sección */
+  .contact-footer {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-top: 2rem;
+  }
+  

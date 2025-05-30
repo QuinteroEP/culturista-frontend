@@ -56,6 +56,8 @@ export class ResultadosComponent {
           params['viajeros'],
         ).subscribe(destinos => {
           this.listaDestinos = destinos;
+          console.log("Destinos:")
+          console.log(this.listaDestinos)
           sessionStorage.setItem('listaDestinos', JSON.stringify(this.listaDestinos));
         });
       });

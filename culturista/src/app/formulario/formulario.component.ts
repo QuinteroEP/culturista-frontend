@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { planService } from '../service/planService';
+import { destinoService } from '../service/destinoService';
+import { tipoActividad } from '../entity/tipoActividad';
 
 @Component({
   selector: 'app-formulario',
@@ -11,8 +13,20 @@ import { planService } from '../service/planService';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
+  listaTipos!: tipoActividad[];
 
-  constructor(private router: Router, private plan: planService) { }
+  constructor(
+    private router: Router, 
+    private plan: planService,
+    private destinoService: destinoService) { }
+
+  ngOnInit(){
+    this.destinoService.getTypes().subscribe(
+      (tipos) => {
+        this.listaTipos = tipos;
+      }
+    );
+  }
   
   showResults(form: NgForm) {
     console.log('Form Data:', form.value);
@@ -23,6 +37,16 @@ export class FormularioComponent {
     const viajeros = form.value.viajeros;
     const presupuesto = form.value.presupuesto;
     const actividades = Object.keys(form.value).filter(key => form.value[key] === true); // Extract selected checkboxes
+
+    console.log('mapeando actividades');
+    for (let i = 0; i < actividades.length; i++) {
+      for (let lista of this.listaTipos) {
+        if (actividades[i] === lista.tipo) {
+          actividades[i] = lista.id.toString();
+        }
+      }
+    }
+
 
     const fecha = form.value.salida;
 

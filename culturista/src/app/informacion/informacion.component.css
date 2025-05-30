@@ -1,133 +1,121 @@
-/* Contenedor general */
-.container {
-    width: 100%; /* Usa todo el ancho */
-    max-width: none; /* Sin restricciones */
-    margin: 50px 0; /* Más espacio superior e inferior */
-    padding: 35px 6%; /* Más padding */
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+/* —— HERO SECCIÓN —— */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
+  background: url('/assets/montania.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Encabezado con imagen y texto */
+/* —— TU CARD FLOTANTE —— */
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 960px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* —— ENCABEZADO —— */
 .header {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Más espacio entre imagen y texto */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
-
-/* Imagen */
 .place-image {
-    width: 180px; /* Más grande */
-    height: 180px;
-    border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-/* Texto */
-.text-container {
-    flex-grow: 1;
-}
-
+.text-container { flex: 1; }
 h1 {
-    font-size: 38px; /* Más grande */
-    max-width: 90%;
+  font-size: 2.5rem;
+  margin: 0 0 12px;
+  color: #222;
+}
+.description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
 }
 
-.description, .precio {
-    font-size: 20px; /* Más grande */
-    color: #333;
-    margin-top: 12px;
-    line-height: 1.6;
-    max-width: 90%;
-}
-
-/* Información */
+/* —— INFORMACIÓN —— */
 .info {
-    margin-top: 25px;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
 }
-
-.info p {
-    font-size: 20px; /* Más grande */
-    margin: 10px 0;
-}
-
+.precio { font-weight: 600; color: #007BFF; }
 .info ul {
-    padding-left: 30px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
 }
-
 .info ul li {
-    font-size: 19px; /* Más grande */
-    margin: 7px 0;
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 8px;
+}
+.info ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00C0F2;
 }
 
-/* Botones alineados correctamente */
+/* —— BOTONES —— */
 .buttons {
-    display: flex;
-    justify-content: center; /* Centra los botones */
-    gap: 20px; /* Espacio entre botones */
-    margin-top: 30px;
-    flex-wrap: wrap; /* Evita que se desborden en móviles */
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 35px;
+  flex-wrap: wrap;
 }
-
-/* Botones */
 .btn {
-    padding: 14px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    min-width: 140px; /* Evita que sean demasiado pequeños */
-    text-align: center;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 160px;
 }
-
-/* Estilos específicos */
-.add-btn {
-    background-color: #5cb8f5;
-    color: black;
-    font-weight: bold;
-}
-
 .return-btn {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: 2px solid black;
+  background: transparent;
+  border: 2px solid #00C0F2;
+  color: #00C0F2;
 }
-
 .btn:hover {
-    opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 192, 242, 0.3);
 }
 
-
-/* 🔹 RESPONSIVE DESIGN */
+/* —— RESPONSIVE —— */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .place-image {
-        width: 130px;
-        height: 130px;
-    }
-
-    h1 {
-        font-size: 32px;
-        max-width: 100%;
-    }
-
-    .description {
-        font-size: 18px;
-        max-width: 100%;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        width: 100%; /* Botones ocupan todo el ancho en móviles */
-    }
+  .hero-section { height: 80vh; }
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+  .header { flex-direction: column; text-align: center; }
+  .place-image { width: 100%; height: auto; }
+  h1 { font-size: 2rem; }
+  .description, .info, .info p, .info ul li { font-size: 16px; }
+  .btn { width: 100%; }
 }

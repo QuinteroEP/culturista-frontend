@@ -1,48 +1,84 @@
 <div class="travel-planner">
+  <!-- PANEL DE TEXTO (50% izquierdo en desktop) -->
+  <div class="panel-text">
     <h2 class="title">¿Estás en Colombia y no sabes cómo planear tu viaje?</h2>
     <p class="subtitle">
       ¡No te preocupes! Completa nuestro formulario y en minutos tendrás un itinerario a tu medida.
     </p>
-  
+
     <div class="button-container">
       <button class="register-btn" (click)="goToLogin()">Planear Mi Viaje</button>
     </div>
-  
+
     <p class="slogan">No seas un turista, sé un <strong>CulTurista</strong>!</p>
-  
+
     <hr class="divider" />
-  
-    <div class="benefits">
-      <h3>Beneficios de elegir CulTurista</h3>
-      <ul>
-        <li><span class="icon">✔️</span> Itinerarios 100% personalizados</li>
-        <li><span class="icon">✔️</span> Guías locales expertos</li>
-        <li><span class="icon">✔️</span> Ofertas exclusivas y promociones</li>
-      </ul>
+  </div>
+
+  <!-- SECCIONES OCULTAS BAJO EL HERO -->
+  <div class="benefits">
+    <h3>Beneficios de elegir CulTurista</h3>
+    <ul>
+      <li><span class="icon">✔️</span> Itinerarios 100% personalizados</li>
+      <li><span class="icon">✔️</span> Guías locales expertos</li>
+      <li><span class="icon">✔️</span> Ofertas exclusivas y promociones</li>
+    </ul>
+  </div>
+
+  <div class="sections-container">
+    <div class="section-item">
+      <img src="assets/museo.png" alt="Museos" loading="lazy">
+      <div class="content">
+        <h3>Museos y Arte</h3>
+        <p>Descubre el Museo del Oro, Botero y mucho más.</p>
+      </div>
     </div>
-  
-    <div class="sections-container">
-      <div class="section-item">
-        <img src="assets/museo.png" alt="Museos" loading="lazy">
-        <div class="content">
-          <h3>Museos y Arte</h3>
-          <p>Descubre el Museo del Oro, Botero y mucho más.</p>
-        </div>
+    <div class="section-item">
+      <img src="assets/playa.jpg" alt="Playas Paradisíacas" loading="lazy">
+      <div class="content">
+        <h3>Playas Paradisíacas</h3>
+        <p>Relájate en el Caribe y explora calas vírgenes.</p>
       </div>
-      <div class="section-item">
-        <img src="assets/playa.jpg" alt="Playas Paradisíacas" loading="lazy">
-        <div class="content">
-          <h3>Playas Paradisíacas</h3>
-          <p>Relájate en el Caribe y explora calas vírgenes.</p>
-        </div>
-      </div>
-      <div class="section-item">
-        <img src="assets/pueblo.jpg" alt="Pueblos Patrimonio" loading="lazy">
-        <div class="content">
-          <h3>Pueblos Patrimonio</h3>
-          <p>Pasea por Barichara, Salento y sus calles coloniales.</p>
-        </div>
+    </div>
+    <div class="section-item">
+      <img src="assets/pueblo.jpg" alt="Pueblos Patrimonio" loading="lazy">
+      <div class="content">
+        <h3>Pueblos Patrimonio</h3>
+        <p>Pasea por Barichara, Salento y sus calles coloniales.</p>
       </div>
     </div>
   </div>
-  
+</div>
+
+<!-- ITINERARIOS DESTACADOS -->
+<section class="featured-itineraries">
+  <h2 class="section-title">Itinerarios Destacados</h2>
+  <div class="itinerary-grid">
+    <!-- Tarjeta 1 -->
+    <div class="itinerary-card">
+      <img src="assets/montania.jpg" alt="Aventura en la Montaña" loading="lazy">
+      <div class="itinerary-content">
+        <h3>Aventura en la Montaña</h3>
+        <p>Recorre senderos y miradores en la región andina, disfruta paisajes espectaculares.</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="itinerary-card">
+      <img src="assets/museo.png" alt="Cultura en Bogotá" loading="lazy">
+      <div class="itinerary-content">
+        <h3>Cultura en Bogotá</h3>
+        <p>Explora la historia y arte de la capital: museos, grafitis guiados y gastronomía local.</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="itinerary-card">
+      <img src="assets/playa.jpg" alt="Relax en el Caribe" loading="lazy">
+      <div class="itinerary-content">
+        <h3>Relax en el Caribe</h3>
+        <p>Disfruta playas vírgenes, snorkeling en Islas del Rosario y atardeceres en Cartagena.</p>
+      </div>
+    </div>
+  </div>
+</section>

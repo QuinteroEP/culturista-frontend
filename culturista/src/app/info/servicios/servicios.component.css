@@ -1,41 +1,91 @@
-/* Establece un fondo suave y una tipografía legible en todo el documento */
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f8f8;
-    color: #333;
-}
-
-/* Estilo para los títulos principales */
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #222;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
+/* Asegura separación del header transparente */
+.services {
+    padding: 7rem 0 4rem;          /* aún más padding-top */
+  }
+  
+  /* Título y subtítulo */
+  .services h2 {
     text-align: center;
-}
-
-/* Estilo para subtítulos */
-h2 {
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    font-size: 2rem;
     color: #222;
-}
-
-/* Estilo para párrafos */
-p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-/* Opcional: centrar el contenido en un ancho máximo */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    margin-bottom: 0.5rem;
+  }
+  .services-intro {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  /* Fondos alternados */
+  .service-block.odd {
+    background-color: #ffffff;
+  }
+  .service-block.even {
+    background-color: #f0f2f5;
+  }
+  
+  /* Bloques de servicio */
+  .service-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 1rem;           /* más padding vertical */
+    border-radius: 0.5rem;
+  }
+  
+  /* Separador */
+  .services hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0 1rem;
+  }
+  
+  /* Imagen más grande en móvil */
+    .service-img img {
+    width: 100%;
+    max-width: 450px;   /* antes 350px, ahora 450px */
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  
+  /* Texto */
+  .service-text {
+    text-align: center;
+    max-width: 700px;             /* algo más ancho */
+  }
+  .service-text .icon {
+    font-size: 3rem;              /* icono más grande */
+    color: #00C0F2;
+    margin-bottom: 0.75rem;
+  }
+  .service-text h3 {
+    font-size: 1.75rem;            /* título más grande */
+    color: #222;
+    margin-bottom: 0.75rem;
+  }
+  .service-text p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Desktop: orden horizontal y reversa */
+  @media (min-width: 768px) {
+    .service-block {
+      flex-direction: row;
+      justify-content: center;
+      text-align: left;
+    }
+    .service-block.reverse {
+      flex-direction: row-reverse;
+    }
+    .service-img img {
+      max-width: 400px;           /* ligeramente menor en desktop */
+    }
+    .service-text {
+      padding: 0 2rem;
+    }
+  }
+  
